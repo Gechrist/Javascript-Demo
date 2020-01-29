@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="UTF-8">
+	<title>Around the World</title>
+	
+	<link rel="stylesheet" type="text/css" href="css/all.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	
+	<script src="js/jquery-3.4.0.min.js"></script>
+	<script src="js/all.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="js/script.js"></script>
+
+</head>
+
+<body>
+	
+	<div class="d-flex flex-row-reverse" style="background-color: #F86923; ">
+	<div class="container">
+		<div class="row">
+		<div class="col-9"></div>
+		<div class="p-2"><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a></div>
+		<div class="p-2"><a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a></div>
+		<div class="p-2"><a href="https://www.google.com" target="_blank"><i class="fab fa-google-plus-g"></i></a></div>
+		<div class="p-2"><a href="https://www.skype.com" target="_blank"><i class="fab fa-skype"></i></a></div>
+		<div class="p-2"><a href="https://www.vimeo.com" target="_blank"><i class="fab fa-vimeo"></i></a></div>
+		<div class="p-2"><a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a></div>
+	</div>
+		<div class="col-3"></div>
+	</div>
+	</div>
+
+	
+	<div class="container">
+	<div class="row">	
+	<div class="col-9">
+		<nav class="navbar sticky-top navbar-white bg-white">
+			<div class="d-flex flex-row">
+			<div class="p-2"><a class="navbar-brand" href="#">
+				<img src="images/Around-The-World-logo-without.jpg" width="150" height="50" class="d-inline-block align-top" alt="atw_logo">
+				</a></div>
+				<ul class="nav nav-pills">
+			<div class="p-2"><li class="nav-item1"><a class="navbar-brand-menu" href="#">
+				ΕΞΩΤΙΚΑ
+			</a></li></div>
+			<div class="p-2"><li class="nav-item2"><a class="navbar-brand-menu nav-link active" href="#">
+				ΚΟΣΜΟΠΟΛΙΤΙΚΑ
+			</a></li></div>
+			<div class="p-2"><li class="nav-item3"><a class="navbar-brand-menu" href="#">
+				ΑΜΕΣΗ ΑΝΑΧΩΡΗΣΗ
+			</a></li></div>
+			<div class="p-2"><li class="nav-item4"><a class="navbar-brand-menu" href="#">
+				ΕΠΙΚΟΙΝΩΝΙΑ
+			</a></li></div>
+			</ul>
+		</nav>
+	</div>
+	<div class="col-3"></div>	
+	</div>
+	</div>
+	</div>
+		
+	<div class="container">
+		<div class="row">
+		<div class="col-9">
+		<nav aria-label="breadcrumb">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item inactive"><a href="#">Αρχική σελίδα</a></li>
+				<li class="breadcrumb-item active" aria-current="page">Κοσμοπολίτικα</li>
+			</ol>
+		</nav>
+		</div>
+		<div class="col-3"></div>
+	<div class="container">
+		<div class="row">
+		<div class="col-9">
+		<h3>Κοσμοπολίτικα</h3>
+		<div class="card-deck">
+			<div class="card" id="ven">
+				<img src="images/venice-panoramic.jpg" class="card-img-top" alt="venice">
+			<div class="card-body">
+				<h5 class="card-title">Βενετία</h5>
+				<p class="card-text">Αναχώρηση: 20-04-2019</p>
+				<p class="card-text"><small class="text-muted">Τιμή: 470 €</small></p>
+				<button type="button" class="btn btn-primary" onclick="addtocart('ven')">Προσθήκη στο καλάθι</button>
+			</div>
+			</div>
+			<div class="card" id="lon">
+				<img src="images/london-thames.jpg" class="card-img-top" alt="london">
+			<div class="card-body">
+				<h5 class="card-title">Λονδίνο</h5>
+				<p class="card-text">Αναχώρηση: 28-04-2019</p>
+				<p class="card-text"><small class="text-muted">Τιμή: 470 €</small></p>
+				<button type="button" class="btn btn-primary" onclick="addtocart('lon')">Προσθήκη στο καλάθι</button>
+			</div>
+			</div>
+			<div class="card" id="ny">
+				<img src="images/new-york-cityscape.jpg" class="card-img-top" alt="new-york">
+			<div class="card-body">
+				<h5 class="card-title">Νέα Υόρκη</h5>
+				<p class="card-text">Αναχώρηση: 24-05-2019</p>
+				<p class="card-text"><small class="text-muted">Τιμή: 1750 €</small></p>
+				<button type="button" class="btn btn-primary" onclick="addtocart('ny')">Προσθήκη στο καλάθι</button>
+			</div>
+			</div>
+		</div>
+		</div>
+
+		<div class="col-3">
+		<div class="dropdown">
+			<button onmouseover="dropdown()" class="dropbtn"><i class="fas fa-shopping-cart"></i> Καλάθι Αγορών</button>
+				<div id="myDropdown" class="dropdown-content">
+				<a href="#"></a>
+				</div>
+		</div>
+
+		</div>
+		</div>
+	</div>
+
+	<div class="footer">
+		<div class="container">
+		<div class="row">
+		<div class="col-11">
+			<ul class="nav justify-content-end">
+			<li class="nav-item">
+				<a class="nav-link active" href="#">Αρχική</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">Επικοινωνία</a>
+			</li>
+			</ul>			
+		</div>
+		<div class="col"></div>
+	</div>
+	
+</body>
+
+</html>

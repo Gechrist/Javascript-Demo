@@ -1,0 +1,185 @@
+body {
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-position:top;
+	height:100%;
+	position:center;
+}
+/*background*/
+.pl {
+	padding-left:14%;
+}
+
+.pr {
+	padding-right:5%;
+}
+
+.count {
+	font-size:8px;
+	color:white;
+	margin-left:-11px;
+}
+/*navbar*/
+
+.jumbotron-fluid {
+	margin:0;
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%, -50%);
+	background-color:white;
+	opacity:0.85;
+	width:60%;
+	height:35%;
+}
+/*jumbotron*/
+
+table, tr, td {
+	position:relative;
+	margin-top:-50px;
+	border:2px solid black!important;
+	border-collapse:collapse;
+	width:90px;
+}
+
+.display-4 {
+	font-size:80px;
+	font-weight:bold;
+	padding-right:50px;
+	text-align:center;
+}
+
+.lead {
+	font-weight:bold;
+	font-family:'Trebuchet MS', Helvetica, sans-serif;
+	text-align:center;
+}
+
+.start {
+	text-align:center;
+	line-height:120px;
+	color:white;
+	background-color:black;
+}
+
+#link {
+	color:white;
+	text-decoration:none;
+}
+
+img {
+	width:100%;
+	display:block;
+}
+
+.newfont {
+	font-family:'Satisfy', cursive;
+}
+/*table*/
+
+/*orderform css*/
+form {
+	background-color:white;
+}
+
+.form2 {
+	position:absolute;
+	margin-top:30px;
+	text-align:center;
+	width:120%;
+}
+
+#prdname {
+	margin-left:5px;
+}
+
+#qnt {
+	margin-left:10px;
+	margin-right:19px;
+}
+
+#lblpriceid {
+	margin-left:10px;
+	margin-right:5px;
+}
+
+#minus {
+	margin-left:10px;
+	margin-right:1px;
+}
+
+#plus {
+	margin-left:1px;
+	margin-right:20px;
+}
+
+#total {
+	position:relative;
+	margin-top:55px;
+	margin-left:82%;
+	text-align:center;
+	background-color:white;
+}
+
+
+.form-control1 {
+	margin-top:-20px;
+	margin-left:10px;
+	text-align:center;
+}
+
+.form-control2 {
+	margin-top:-20px;
+	width:43px;
+	text-align:center;
+}
+
+.form-control3 {
+	margin-top:-20px;
+	width:70px;
+	text-align:center;
+}
+
+button {
+	margin-top:120px;
+	margin-left:-12px;
+	margin-bottom:30px;
+}
+
+.form-inline {
+	margin-top:30px;
+	margin-bottom:30px;
+	padding-left:30px;
+}
+
+img {
+	border-radius:35px;
+	cursor:pointer;
+}
+
+.card-body {
+	cursor:pointer;
+}
+
+#main {
+	display:none;
+}
+
+#drinks {
+	display:none;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.dynamic-stuff {
+	width:120%;
+}
+
+.mt-5 {
+	padding-bottom:26px;
+	margin-left:3px;
+}

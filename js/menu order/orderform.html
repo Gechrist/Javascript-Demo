@@ -1,0 +1,1419 @@
+<!DOCTYPE html>
+
+<head>
+
+	<meta charset="UTF-8">
+	<title>Order Online</title>
+
+	<link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/all.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	
+	<script src="js/all.js"></script>
+	<script src="js/jquery-3.4.0.min.js"></script>
+	<script src="js/bootstrap.js"></script>
+
+</head>
+
+<body background="images/bg.jpg">
+
+			<div class="container">
+			<div class="row">
+			<div class="col-7">
+				<form class="form-inline">
+				  <select class="custom-select my-1 mr-sm-2" onchange="menu()" id="inlineFormCustomSelectPref">
+					<option value="0" selected>Ορεκτικά</option>
+					<option value="1">Κυρίως</option>
+					<option value="2">Ποτά</option>
+				  </select>	
+				<div id="starters">
+					<div class="card mb-3" style="max-width: 540px;">				  
+					<div class="row no-gutters" id="patates">
+							<div class="col-md-4">
+							  <img src="images/patatestiganites.jpg" class="card-img" alt="patates_image">
+							</div>
+							<div class="col-md-8">
+							  <div class="card-body">
+								<h5 class="card-title">Πατάτες τηγανητές</h5>
+								<p class="card-text"></p>
+								<p class="card-text"><small class="text-muted">3.00 €</small></p>
+							  </div>
+							</div>
+					</div>
+					</div>
+					<div class="card mb-3" style="max-width: 540px;">
+						  <div class="row no-gutters" id="haloumi">
+							<div class="col-md-4">
+							  <img src="images/haloumi.jpg" class="card-img" alt="haloumi_image">
+							</div>
+							<div class="col-md-8">
+							  <div class="card-body">
+								<h5 class="card-title">Χαλούμι</h5>
+								<p class="card-text"></p>
+								<p class="card-text"><small class="text-muted">4.00 €</small></p>
+							  </div>
+							</div>
+						  </div>
+					</div>
+					<div class="card mb-3" style="max-width: 540px;">
+						  <div class="row no-gutters" id="kaserokroketes">
+							<div class="col-md-4">
+							  <img src="images/kaserokroketes.jpg" class="card-img" alt="kaserokroketes_image">
+							</div>
+							<div class="col-md-8">
+							  <div class="card-body">
+								<h5 class="card-title">Κασεροκροκέτες</h5>
+								<p class="card-text">8 Τεμάχια.</p>
+								<p class="card-text"><small class="text-muted">4.00 €</small></p>
+							  </div>
+							</div>
+						  </div>
+					</div>
+				</div>	
+				<div id="main">
+					<div class="card mb-3 main" style="max-width: 540px;">
+						  <div class="row no-gutters" id="gyros">
+							<div class="col-md-4">
+							  <img src="images/gyrosmerida.jpg" class="card-img" alt="gyros_image">
+							</div>
+							<div class="col-md-8">
+							  <div class="card-body">
+								<h5 class="card-title">Γύρος χοιρινός μερίδα</h5>
+								<p class="card-text">300gr. Συνοδεύεται από πατάτες τηγανητές, ντομάτα, κρεμμύδι & αλοιφή της επιλογής σας.</p>
+								<p class="card-text"><small class="text-muted">7.00 €</small></p>
+							  </div>
+							</div>
+						  </div>
+					</div>
+					<div class="card mb-3 main" style="max-width: 540px;">
+						  <div class="row no-gutters" id="souvlaki">
+							<div class="col-md-4">
+							  <img src="images/souvlaki.jpg" class="card-img" alt="souvlaki_image">
+							</div>
+							<div class="col-md-8">
+							  <div class="card-body">
+								<h5 class="card-title">Σουβλάκι χοιρινό μερίδα</h5>
+								<p class="card-text">3 Τεμάχια. Συνοδεύεται από πατάτες τηγανητές, ντομάτα, κρεμμύδι & αλοιφή της επιλογής σας.</p>
+								<p class="card-text"><small class="text-muted">7.00 €</small></p>
+							  </div>
+							</div>
+						  </div>
+					</div>
+					<div class="card mb-3 main" style="max-width: 540px;">
+						  <div class="row no-gutters" id="bifteki">
+							<div class="col-md-4">
+							  <img src="images/bifteki.jpg" class="card-img" alt="bifteki_image">
+							</div>
+							<div class="col-md-8">
+							  <div class="card-body">
+								<h5 class="card-title">Μπιφτέκι μοσχαρίσιο μερίδα</h5>
+								<p class="card-text">2 Τεμάχια. Συνοδεύεται από πατάτες τηγανητές, ντομάτα, κρεμμύδι & αλοιφή της επιλογής σας.</p>
+								<p class="card-text"><small class="text-muted">7.50 €</small></p>
+							  </div>
+							</div>
+						  </div>
+					</div>
+				</div>
+				<div id="drinks">
+					<div class="card mb-3" style="max-width: 540px;">
+						  <div class="row no-gutters" id="amstel">
+							<div class="col-md-4">
+							  <img src="images/amstel.jpg" class="card-img" alt="amstel_image">
+							</div>
+							<div class="col-md-8">
+							  <div class="card-body">
+								<h5 class="card-title">Amstel 550ml</h5>
+								<p class="card-text"></p>
+								<p class="card-text"><small class="text-muted">3.00 €</small></p>
+							  </div>
+							</div>
+						  </div>
+					</div>
+					<div class="card mb-3" style="max-width: 540px;">
+						  <div class="row no-gutters" id="retsina">
+							<div class="col-md-4">
+							  <img src="images/retsinamalamatina.jpg" class="card-img" alt="retsina_image">
+							</div>
+							<div class="col-md-8">
+							  <div class="card-body">
+								<h5 class="card-title">Ρετσίνα Μαλαματίνα 500ml</h5>
+								<p class="card-text"></p>
+								<p class="card-text"><small class="text-muted">3.00 €</small></p>
+							  </div>
+							</div>
+					</div>
+					<div class="card mb-3"  style="max-width: 540px;">
+						  <div class="row no-gutters" id="ouzo">
+							<div class="col-md-4">
+							  <img src="images/ouzoplomari.jpg" class="card-img" alt="ouzo_image">
+							</div>
+							<div class="col-md-8">
+							  <div class="card-body">
+								<h5 class="card-title">Ούζο Πλωμάρι 50ml</h5>
+								<p class="card-text"></p>
+								<p class="card-text"><small class="text-muted">2.00 €</small></p>
+							  </div>
+							</div>
+					</div>
+				</div>
+			</form>
+			</div>
+			</div>
+			</div>
+			<div class="col-5">
+				<form class="form2">
+					<div class="row">
+					<div id="createForm">
+					</div>
+					<div class="form-group col-md-5">
+						<input type="text" class="form-control" id="total" readonly="readonly" placeholder="Συνολικό Ποσό">
+					</div>
+					<button type="button" class="btn btn-secondary btn-lg" onclick="button()">Αποστολή</button>
+				</form>
+			</div>
+<script>
+function menu() {
+	if (document.getElementById("inlineFormCustomSelectPref").value == "0") {
+		document.getElementById("starters").style.display = "block";
+		document.getElementById("main").style.display = "none";
+		document.getElementById("drinks").style.display = "none";
+	}
+	else if (document.getElementById("inlineFormCustomSelectPref").value == "1") {
+		document.getElementById("starters").style.display = "none";
+		document.getElementById("main").style.display = "block";
+		document.getElementById("drinks").style.display = "none";
+	}
+	else {
+		document.getElementById("starters").style.display = "none";
+		document.getElementById("main").style.display = "none";
+		document.getElementById("drinks").style.display = "block";
+	}
+}
+
+$('#patates').click(function() {
+/*clicking on the product more than once adds to quantity instead of adding the same product to the order list - up to line 216 **PROBLEM** if item removed, cannot be reentered in the order list*/
+		var $patates = $(this);
+	if (!$patates.data('clicked')) {
+	} 
+	else {
+			document.getElementById('qntpatates').stepUp(1);
+		var patatestimi = 3;		
+		var timi = patatestimi * document.getElementById('qntpatates').value;
+		var t = timi.toFixed(2);
+			document.getElementById('prcpatates').value = t;
+		
+		var sum = 0;
+	$('.form-control3').each(function() {
+		var item_val = parseFloat($(this).val());
+		if(!isNaN(item_val)) {
+			sum += item_val;
+			}
+	$('#total').val(sum.toFixed(2));
+	});	
+		return;	
+	}
+	$patates.data('clicked',true);
+	
+		var formItem = document.createElement("form");
+		formItem.id="Form";
+		var division = document.createElement("div");
+		division.className="col";
+		division.id = "prdnamepatates";
+		var labelName = document.createElement("label");
+		labelName.innerHTML = "Ονομασία";
+		var inputName = document.createElement("input");
+		inputName.id="namepatates";
+		inputName.type='text';
+		inputName.value	= 'Πατάτες τηγανητές';
+		inputName.className="form-control1";
+		var valueName = document.createElement("value");
+				
+		var division2 = document.createElement("div");
+		division2.className="col";
+		division2.id = "quantity"
+		var buttonminus = document.createElement("button");
+		buttonminus.id='minuspatates';
+		buttonminus.type='button';
+		buttonminus.className="minus-btn";
+		buttonminus.onclick = "function()";
+		buttonminus.textContent = '-';
+		var labelQuant = document.createElement("label");
+		labelQuant.id="qnt";
+		labelQuant.innerHTML = "Τεμάχια ";
+		var inputQuant = document.createElement("input");
+		inputQuant.id="qntpatates";
+		inputQuant.type='number';
+		inputQuant.value = '1';
+		inputQuant.className = "form-control2";
+		var valueQuant = document.createElement("value");
+		var buttonplus = document.createElement("button");
+		buttonplus.id='pluspatates';
+		buttonplus.type='button';
+		buttonplus.className="plus-btn";
+		buttonplus.onclick= "function()";
+		buttonplus.textContent = '+';
+		
+		var division3 = document.createElement("div");
+		division3.className = "col";
+		division3.id = "price";
+		var labelPrice = document.createElement("label");
+		labelPrice.id = "lblpriceid";
+		labelPrice.innerHTML = "Τιμή ";
+		var inputPrice = document.createElement("input");
+		inputPrice.id="prcpatates";
+		inputPrice.type='text';
+		inputPrice.name = 'price';
+		inputPrice.value = '3.00';
+		inputPrice.className="form-control3";
+		
+		var buttonremove = document.createElement("button");
+		buttonremove.id='rmvpatates';
+		buttonremove.type='button';
+		buttonremove.className="btn mt-5";
+		buttonremove.onclick='function';
+		buttonremove.textContent = 'X';
+
+		jQuery("#createForm").append(formItem);
+		jQuery("#Form").append(division);
+		jQuery("#prdnamepatates").append(labelName,inputName,valueName,labelQuant,buttonminus,inputQuant,valueQuant,buttonplus,labelPrice,inputPrice, buttonremove);	
+		
+	$('#namepatates').prop('readonly', true);	
+	$('#qntpatates').prop('readonly', true);	
+	$('#prcpatates').prop('readonly', true);
+
+/* **PROBLEM** when item removed and order list is empty the total field, still shows the last price value instead of the placeholder*/
+	$('#rmvpatates').click(function() {
+		$(this).parent().remove('#prdnamepatates');
+		var sum = 0;
+	$('.form-control3').each(function() {
+		var item_val = parseFloat($(this).val());
+		if(!isNaN(item_val)) {
+			sum += item_val;
+			}
+	$('#total').val(sum.toFixed(2));
+	});
+});	
+
+	$('#pluspatates').click(function() {
+			document.getElementById('qntpatates').stepUp(1);
+		var patatestimi = 3;		
+		var timi = patatestimi * document.getElementById('qntpatates').value;
+		var t = timi.toFixed(2);
+			document.getElementById('prcpatates').value = t;
+		
+		var sum = 0;
+	$('.form-control3').each(function() {
+		var item_val = parseFloat($(this).val());
+		if(!isNaN(item_val)) {
+			sum += item_val;
+			}
+	$('#total').val(sum.toFixed(2));
+	});			
+});
+
+	$('#minuspatates').click(function() {
+		var patatestimi = 3;
+		var timi = document.getElementById('prcpatates').value - patatestimi;
+		var t = timi.toFixed(2);
+			document.getElementById('prcpatates').value = t;
+
+		if (document.getElementById('qntpatates').value == 0) {
+			document.getElementById('prcpatates').value = 0;}
+		if (document.getElementById('qntpatates').value > 0) {
+			document.getElementById('qntpatates').stepDown(1);}
+		else {document.getElementById('qntpatates').value = 0;
+		}
+
+		var sum = 0;
+	$('.form-control3').each(function() {
+		var item_val = parseFloat($(this).val());
+		if(!isNaN(item_val)) {
+			sum += item_val;
+			}
+	$('#total').val(sum.toFixed(2));
+	});			
+});
+
+/*in order to show the total price value when first picking a product and the order list is empty. up to line 345*/
+ 		var sum = 0;
+	$('.form-control3').each(function() {
+		var item_val = parseFloat($(this).val());
+		if(!isNaN(item_val)) {
+			sum += item_val;
+			}
+	$('#total').val(sum.toFixed(2));
+	});
+});		
+
+$('#haloumi').click(function() {
+		var $haloumi = $(this);
+	if (!$haloumi.data('clicked')) {
+	} 
+	else {
+			document.getElementById('qnthaloumi').stepUp(1);
+		var haloumitimi = 4;		
+		var timi = haloumitimi * document.getElementById('qnthaloumi').value;
+		var t = timi.toFixed(2);
+			document.getElementById('prchaloumi').value = t;
+			
+		var sum = 0;
+	$('.form-control3').each(function() {
+		var item_val = parseFloat($(this).val());
+		if(!isNaN(item_val)) {
+			sum += item_val;
+			}
+	$('#total').val(sum.toFixed(2));
+	});	
+		return false;	
+	}
+	$haloumi.data('clicked',true);
+	
+		var formItem = document.createElement("form");
+		formItem.id="Form";
+		var division = document.createElement("div");
+		division.className="col";
+		division.id = "prdnamehaloumi";
+		var labelName = document.createElement("label");
+		labelName.innerHTML = "Ονομασία";
+		var inputName = document.createElement("input");
+		inputName.id="namehaloumi";
+		inputName.type='text';
+		inputName.value	= 'Χαλούμι';
+		inputName.className="form-control1";
+		var valueName = document.createElement("value");
+				
+		var division2 = document.createElement("div");
+		division2.className="col";
+		division2.id = "quantity"
+		var buttonminus = document.createElement("button");
+		buttonminus.id='minushaloumi';
+		buttonminus.type='button';
+		buttonminus.className="minus-btn";
+		buttonminus.onclick = "function()";
+		buttonminus.textContent = '-';
+		var labelQuant = document.createElement("label");
+		labelQuant.id="qnt";
+		labelQuant.innerHTML = "Τεμάχια ";
+		var inputQuant = document.createElement("input");
+		inputQuant.id="qnthaloumi";
+		inputQuant.type='number';
+		inputQuant.value = '1';
+		inputQuant.className = "form-control2";
+		var valueQuant = document.createElement("value");
+		var buttonplus = document.createElement("button");
+		buttonplus.id='plushaloumi';
+		buttonplus.type='button';
+		buttonplus.className="plus-btn";
+		buttonplus.onclick= "function()";
+		buttonplus.textContent = '+';
+		
+		var division3 = document.createElement("div");
+		division3.className = "col";
+		division3.id = "price";
+		var labelPrice = document.createElement("label");
+		labelPrice.id = "lblpriceid";
+		labelPrice.innerHTML = "Τιμή ";
+		var inputPrice = document.createElement("input");
+		inputPrice.id="prchaloumi";
+		inputPrice.type='text';
+		inputPrice.name = 'price';
+		inputPrice.value = '4.00';
+		inputPrice.className="form-control3";
+		
+		var buttonremove = document.createElement("button");
+		buttonremove.id='rmvhaloumi';
+		buttonremove.type='button';
+		buttonremove.className="btn mt-5";
+		buttonremove.onclick='function';
+		buttonremove.textContent = 'X';
+
+		jQuery("#createForm").append(formItem);
+		jQuery("#Form").append(division);
+		jQuery("#prdnamehaloumi").append(labelName,inputName,valueName,labelQuant,buttonminus,inputQuant,valueQuant,buttonplus,labelPrice,inputPrice, buttonremove);
+
+	$('#namehaloumi').prop('readonly', true);	
+	$('#qnthaloumi').prop('readonly', true);	
+	$('#prchaloumi').prop('readonly', true);	
+
+	$('#rmvhaloumi').click(function() {
+		$(this).parent().remove('#prdnamehaloumi');
+		var sum = 0;
+	$('.form-control3').each(function() {
+		var item_val = parseFloat($(this).val());
+		if(!isNaN(item_val)) {
+			sum += item_val;
+			}
+	$('#total').val(sum.toFixed(2));
+	});	
+});	
+
+	$('#plushaloumi').click(function() {
+			document.getElementById('qnthaloumi').stepUp(1);
+		var haloumitimi = 4;
+		var timi = haloumitimi * document.getElementById('qnthaloumi').value;
+		var t = timi.toFixed(2);
+			document.getElementById('prchaloumi').value = t;
+		
+		var sum = 0;
+	$('.form-control3').each(function() {
+		var item_val = parseFloat($(this).val());
+		if(!isNaN(item_val)) {
+			sum += item_val;
+			}
+	$('#total').val(sum.toFixed(2));
+	});			
+});
+
+	$('#minushaloumi').click(function() {
+		var haloumitimi = 4;
+		var timi = document.getElementById('prchaloumi').value - haloumitimi;
+		var t = timi.toFixed(2);
+			document.getElementById('prchaloumi').value = t;
+		
+		if (document.getElementById('qnthaloumi').value == 0) {
+			document.getElementById('prchaloumi').value = 0;}
+		if (document.getElementById('qnthaloumi').value > 0) {
+			document.getElementById('qnthaloumi').stepDown(1);}
+		else {document.getElementById('qnthaloumi').value = 0;
+		}
+		
+		var sum = 0;
+	$('.form-control3').each(function() {
+		var item_val = parseFloat($(this).val());
+		if(!isNaN(item_val)) {
+			sum += item_val;
+			}
+	$('#total').val(sum.toFixed(2));
+	});			
+});
+		
+		var sum = 0;
+	$('.form-control3').each(function() {
+		var item_val = parseFloat($(this).val());
+		if(!isNaN(item_val)) {
+			sum += item_val;
+			}
+	$('#total').val(sum.toFixed(2));
+	});	
+});
+
+$('#kaserokroketes').click(function() {
+		var formItem = document.createElement("form");
+		formItem.id="Form";
+		var division = document.createElement("div");
+		division.className="col";
+		division.id = "prdnamekaserokroketes";
+		var labelName = document.createElement("label");
+		labelName.innerHTML = "Ονομασία";
+		var inputName = document.createElement("input");
+		inputName.id="namekaserokroketes";
+		inputName.type='text';
+		inputName.value	= 'Κασεροκροκέτες';
+		inputName.className="form-control1";
+		var valueName = document.createElement("value");
+				
+		var division2 = document.createElement("div");
+		division2.className="col";
+		division2.id = "quantity"
+		var buttonminus = document.createElement("button");
+		buttonminus.id='minuskaserokroketes';
+		buttonminus.type='button';
+		buttonminus.className="minus-btn";
+		buttonminus.onclick = "function()";
+		buttonminus.textContent = '-';
+		var labelQuant = document.createElement("label");
+		labelQuant.id="qnt";
+		labelQuant.innerHTML = "Τεμάχια ";
+		var inputQuant = document.createElement("input");
+		inputQuant.id="qntkaserokroketes";
+		inputQuant.type='number';
+		inputQuant.value = '1';
+		inputQuant.className = "form-control2";
+		var valueQuant = document.createElement("value");
+		var buttonplus = document.createElement("button");
+		buttonplus.id='pluskaserokroketes';
+		buttonplus.type='button';
+		buttonplus.className="plus-btn";
+		buttonplus.onclick= "function()";
+		buttonplus.textContent = '+';
+		
+		var division3 = document.createElement("div");
+		division3.className = "col";
+		division3.id = "price";
+		var labelPrice = document.createElement("label");
+		labelPrice.id = "lblpriceid";
+		labelPrice.innerHTML = "Τιμή ";
+		var inputPrice = document.createElement("input");
+		inputPrice.id="prckaserokroketes";
+		inputPrice.type='text';
+		inputPrice.name = 'price';
+		inputPrice.value = '4.00';
+		inputPrice.className="form-control3";
+		
+		var buttonremove = document.createElement("button");
+		buttonremove.id='rmvkaserokroketes';
+		buttonremove.type='button';
+		buttonremove.className="btn mt-5";
+		buttonremove.onclick='function';
+		buttonremove.textContent = 'X';
+
+		jQuery("#createForm").append(formItem);
+		jQuery("#Form").append(division);
+		jQuery("#prdnamekaserokroketes").append(labelName,inputName,valueName,labelQuant,buttonminus,inputQuant,valueQuant,buttonplus,labelPrice,inputPrice, buttonremove);	
+	
+	$('#namekaserokroketes').prop('readonly', true);	
+	$('#qntkaserokroketes').prop('readonly', true);	
+	$('#prckaserokroketes').prop('readonly', true);
+	
+	$('#rmvkaserokroketes').click(function() {
+		$(this).parent().remove('#prdnamekaserokroketes');
+		var sum = 0;
+	$('.form-control3').each(function() {
+		var item_val = parseFloat($(this).val());
+		if(!isNaN(item_val)) {
+			sum += item_val;
+			}
+	$('#total').val(sum.toFixed(2));
+	});	
+});	
+	
+	$('#pluskaserokroketes').click(function() {
+			document.getElementById('qntkaserokroketes').stepUp(1);
+		var kaserokroketestimi = 4;
+		var timi = kaserokroketestimi * document.getElementById('qntkaserokroketes').value;
+		var t = timi.toFixed(2);
+			document.getElementById('prckaserokroketes').value = t;
+			
+		var sum = 0;
+	$('.form-control3').each(function() {
+		var item_val = parseFloat($(this).val());
+		if(!isNaN(item_val)) {
+			sum += item_val;
+			}
+	$('#total').val(sum.toFixed(2));
+	});				
+});
+
+	$('#minuskaserokroketes').click(function() {
+		var kaserokroketestimi = 4;
+		var timi = document.getElementById('prckaserokroketes').value - kaserokroketestimi;
+		var t = timi.toFixed(2);
+			document.getElementById('prckaserokroketes').value = t;
+		
+		if (document.getElementById('qntkaserokroketes').value == 0) {
+			document.getElementById('prckaserokroketes').value = 0;}
+		if (document.getElementById('qntkaserokroketes').value > 0) {
+			document.getElementById('qntkaserokroketes').stepDown(1);}
+		else {document.getElementById('qntkaserokroketes').value = 0;
+		}
+		
+		var sum = 0;
+	$('.form-control3').each(function() {
+		var item_val = parseFloat($(this).val());
+		if(!isNaN(item_val)) {
+			sum += item_val;
+			}
+	$('#total').val(sum.toFixed(2));
+	});			
+});
+		
+		var sum = 0;
+	$('.form-control3').each(function() {
+		var item_val = parseFloat($(this).val());
+		if(!isNaN(item_val)) {
+			sum += item_val;
+			}
+	$('#total').val(sum.toFixed(2));
+	});	
+});
+
+$('#gyros').click(function() {
+		var formItem = document.createElement("form");
+		formItem.id="Form";
+		var division = document.createElement("div");
+		division.className="col";
+		division.id = "prdnamegyros";
+		var labelName = document.createElement("label");
+		labelName.innerHTML = "Ονομασία";
+		var inputName = document.createElement("input");
+		inputName.id="namegyros";
+		inputName.type='text';
+		inputName.value	= 'Γύρος χοιρινός μερίδα';
+		inputName.className="form-control1";
+		var valueName = document.createElement("value");
+				
+		var division2 = document.createElement("div");
+		division2.className="col";
+		division2.id = "quantity"
+		var buttonminus = document.createElement("button");
+		buttonminus.id='minusgyros';
+		buttonminus.type='button';
+		buttonminus.className="minus-btn";
+		buttonminus.onclick = "function()";
+		buttonminus.textContent = '-';
+		var labelQuant = document.createElement("label");
+		labelQuant.id="qnt";
+		labelQuant.innerHTML = "Τεμάχια ";
+		var inputQuant = document.createElement("input");
+		inputQuant.id="qntgyros";
+		inputQuant.type='number';
+		inputQuant.value = '1';
+		inputQuant.className = "form-control2";
+		var valueQuant = document.createElement("value");
+		var buttonplus = document.createElement("button");
+		buttonplus.id='plusgyros';
+		buttonplus.type='button';
+		buttonplus.className="plus-btn";
+		buttonplus.onclick= "function()";
+		buttonplus.textContent = '+';
+		
+		var division3 = document.createElement("div");
+		division3.className = "col";
+		division3.id = "price";
+		var labelPrice = document.createElement("label");
+		labelPrice.id = "lblpriceid";
+		labelPrice.innerHTML = "Τιμή ";
+		var inputPrice = document.createElement("input");
+		inputPrice.id="prcgyros";
+		inputPrice.type='text';
+		inputPrice.name = 'price';
+		inputPrice.value = '7.00';
+		inputPrice.className="form-control3";
+		
+		var buttonremove = document.createElement("button");
+		buttonremove.id='rmvgyros';
+		buttonremove.type='button';
+		buttonremove.className="btn mt-5";
+		buttonremove.onclick='function';
+		buttonremove.textContent = 'X';
+
+		jQuery("#createForm").append(formItem);
+		jQuery("#Form").append(division);
+		jQuery("#prdnamegyros").append(labelName,inputName,valueName,labelQuant,buttonminus,inputQuant,valueQuant,buttonplus,labelPrice,inputPrice, buttonremove);	
+	
+	$('#namegyros').prop('readonly', true);	
+	$('#qntgyros').prop('readonly', true);	
+	$('#prcgyros').prop('readonly', true);
+	
+	$('#rmvgyros').click(function() {
+		$(this).parent().remove('#prdnamegyros');
+		var sum = 0;
+	$('.form-control3').each(function() {
+		var item_val = parseFloat($(this).val());
+		if(!isNaN(item_val)) {
+			sum += item_val;
+			}
+	$('#total').val(sum.toFixed(2));
+	});	
+});	
+	
+	$('#plusgyros').click(function() {
+			document.getElementById('qntgyros').stepUp(1);
+		var gyrostimi = 7;
+		var timi = gyrostimi * document.getElementById('qntgyros').value;
+		var t = timi.toFixed(2);
+			document.getElementById('prcgyros').value = t;
+		
+		var sum = 0;
+	$('.form-control3').each(function() {
+		var item_val = parseFloat($(this).val());
+		if(!isNaN(item_val)) {
+			sum += item_val;
+			}
+	$('#total').val(sum.toFixed(2));
+	});			
+});
+
+	$('#minusgyros').click(function() {
+		var gyrostimi = 7;
+		var timi = document.getElementById('prcgyros').value - gyrostimi;
+		var t = timi.toFixed(2);
+			document.getElementById('prcgyros').value = t;
+			
+		if (document.getElementById('qntgyros').value == 0) {
+			document.getElementById('prcgyros').value = 0;}
+		if (document.getElementById('qntgyros').value > 0) {
+			document.getElementById('qntgyros').stepDown(1);}
+		else {document.getElementById('qntgyros').value = 0;
+		}
+		
+		var sum = 0;
+	$('.form-control3').each(function() {
+		var item_val = parseFloat($(this).val());
+		if(!isNaN(item_val)) {
+			sum += item_val;
+			}
+	$('#total').val(sum.toFixed(2));
+	});			
+});
+		
+		var sum = 0;
+	$('.form-control3').each(function() {
+		var item_val = parseFloat($(this).val());
+		if(!isNaN(item_val)) {
+			sum += item_val;
+			}
+	$('#total').val(sum.toFixed(2));
+	});		
+});
+
+$('#souvlaki').click(function() {
+		var formItem = document.createElement("form");
+		formItem.id="Form";
+		var division = document.createElement("div");
+		division.className="col";
+		division.id = "prdnamesouvlaki";
+		var labelName = document.createElement("label");
+		labelName.innerHTML = "Ονομασία";
+		var inputName = document.createElement("input");
+		inputName.id="namesouvlaki";
+		inputName.type='text';
+		inputName.value	= 'Σουβλάκι χοιρινό μερίδα';
+		inputName.className="form-control1";
+		var valueName = document.createElement("value");
+				
+		var division2 = document.createElement("div");
+		division2.className="col";
+		division2.id = "quantity"
+		var buttonminus = document.createElement("button");
+		buttonminus.id='minussouvlaki';
+		buttonminus.type='button';
+		buttonminus.className="minus-btn";
+		buttonminus.onclick = "function()";
+		buttonminus.textContent = '-';
+		var labelQuant = document.createElement("label");
+		labelQuant.id="qnt";
+		labelQuant.innerHTML = "Τεμάχια ";
+		var inputQuant = document.createElement("input");
+		inputQuant.id="qntsouvlaki";
+		inputQuant.type='number';
+		inputQuant.value = '1';
+		inputQuant.className = "form-control2";
+		var valueQuant = document.createElement("value");
+		var buttonplus = document.createElement("button");
+		buttonplus.id='plussouvlaki';
+		buttonplus.type='button';
+		buttonplus.className="plus-btn";
+		buttonplus.onclick= "function()";
+		buttonplus.textContent = '+';
+		
+		var division3 = document.createElement("div");
+		division3.className = "col";
+		division3.id = "price";
+		var labelPrice = document.createElement("label");
+		labelPrice.id = "lblpriceid";
+		labelPrice.innerHTML = "Τιμή ";
+		var inputPrice = document.createElement("input");
+		inputPrice.id="prcsouvlaki";
+		inputPrice.type='text';
+		inputPrice.name = 'price';
+		inputPrice.value = '7.00';
+		inputPrice.className="form-control3";
+		
+		var buttonremove = document.createElement("button");
+		buttonremove.id='rmvsouvlaki';
+		buttonremove.type='button';
+		buttonremove.className="btn mt-5";
+		buttonremove.onclick='function';
+		buttonremove.textContent = 'X';
+
+		jQuery("#createForm").append(formItem);
+		jQuery("#Form").append(division);
+		jQuery("#prdnamesouvlaki").append(labelName,inputName,valueName,labelQuant,buttonminus,inputQuant,valueQuant,buttonplus,labelPrice,inputPrice, buttonremove);
+		
+	$('#namesouvlaki').prop('readonly', true);	
+	$('#qntsouvlaki').prop('readonly', true);	
+	$('#prcsouvlaki').prop('readonly', true);
+	
+	$('#rmvsouvlaki').click(function() {
+		$(this).parent().remove('#prdnamesouvlaki');
+		var sum = 0;
+	$('.form-control3').each(function() {
+		var item_val = parseFloat($(this).val());
+		if(!isNaN(item_val)) {
+			sum += item_val;
+			}
+	$('#total').val(sum.toFixed(2));
+	});	
+});	
+	
+	$('#plussouvlaki').click(function() {
+			document.getElementById('qntsouvlaki').stepUp(1);
+		var souvlakitimi = 7;
+		var timi = souvlakitimi * document.getElementById('qntsouvlaki').value;
+		var t = timi.toFixed(2);
+			document.getElementById('prcsouvlaki').value = t;
+
+		var sum = 0;
+	$('.form-control3').each(function() {
+		var item_val = parseFloat($(this).val());
+		if(!isNaN(item_val)) {
+			sum += item_val;
+			}
+	$('#total').val(sum.toFixed(2));
+	});			
+});
+
+	$('#minussouvlaki').click(function() {
+		var souvlakitimi = 7;
+		var timi = document.getElementById('prcsouvlaki').value - souvlakitimi;
+		var t = timi.toFixed(2);
+			document.getElementById('prcsouvlaki').value = t;
+		
+		if (document.getElementById('qntsouvlaki').value == 0) {
+			document.getElementById('prcsouvlaki').value = 0;}
+		if (document.getElementById('qntsouvlaki').value > 0) {
+			document.getElementById('qntsouvlaki').stepDown(1);}
+		else {document.getElementById('qntsouvlaki').value = 0;
+		}
+		
+		var sum = 0;
+	$('.form-control3').each(function() {
+		var item_val = parseFloat($(this).val());
+		if(!isNaN(item_val)) {
+			sum += item_val;
+			}
+	$('#total').val(sum.toFixed(2));
+	});			
+});
+
+		var sum = 0;
+	$('.form-control3').each(function() {
+		var item_val = parseFloat($(this).val());
+		if(!isNaN(item_val)) {
+			sum += item_val;
+			}
+	$('#total').val(sum.toFixed(2));
+	});		
+});
+
+$('#bifteki').click(function() {
+		var formItem = document.createElement("form");
+		formItem.id="Form";
+		var division = document.createElement("div");
+		division.className="col";
+		division.id = "prdnamebifteki";
+		var labelName = document.createElement("label");
+		labelName.innerHTML = "Ονομασία";
+		var inputName = document.createElement("input");
+		inputName.id="namebifteki";
+		inputName.type='text';
+		inputName.value	= 'Μπιφτέκι μοσχαρίσιο μερίδα';
+		inputName.className="form-control1";
+		var valueName = document.createElement("value");
+				
+		var division2 = document.createElement("div");
+		division2.className="col";
+		division2.id = "quantity"
+		var buttonminus = document.createElement("button");
+		buttonminus.id='minusbifteki';
+		buttonminus.type='button';
+		buttonminus.className="minus-btn";
+		buttonminus.onclick = "function()";
+		buttonminus.textContent = '-';
+		var labelQuant = document.createElement("label");
+		labelQuant.id="qnt";
+		labelQuant.innerHTML = "Τεμάχια ";
+		var inputQuant = document.createElement("input");
+		inputQuant.id="qntbifteki";
+		inputQuant.type='number';
+		inputQuant.value = '1';
+		inputQuant.className = "form-control2";
+		var valueQuant = document.createElement("value");
+		var buttonplus = document.createElement("button");
+		buttonplus.id='plusbifteki';
+		buttonplus.type='button';
+		buttonplus.className="plus-btn";
+		buttonplus.onclick= "function()";
+		buttonplus.textContent = '+';
+		
+		var division3 = document.createElement("div");
+		division3.className = "col";
+		division3.id = "price";
+		var labelPrice = document.createElement("label");
+		labelPrice.id = "lblpriceid";
+		labelPrice.innerHTML = "Τιμή ";
+		var inputPrice = document.createElement("input");
+		inputPrice.id="prcbifteki";
+		inputPrice.type='text';
+		inputPrice.name = 'price';
+		inputPrice.value = '7.50';
+		inputPrice.className="form-control3";
+		
+		var buttonremove = document.createElement("button");
+		buttonremove.id='rmvbifteki';
+		buttonremove.type='button';
+		buttonremove.className="btn mt-5";
+		buttonremove.onclick='function';
+		buttonremove.textContent = 'X';
+
+		jQuery("#createForm").append(formItem);
+		jQuery("#Form").append(division);
+		jQuery("#prdnamebifteki").append(labelName,inputName,valueName,labelQuant,buttonminus,inputQuant,valueQuant,buttonplus,labelPrice,inputPrice, buttonremove);	
+	
+	$('#namebifteki').prop('readonly', true);	
+	$('#qntbifteki').prop('readonly', true);	
+	$('#prcbifteki').prop('readonly', true);
+	
+	$('#rmvbifteki').click(function() {
+		$(this).parent().remove('#prdnamebifteki');		
+		var sum = 0;
+	$('.form-control3').each(function() {
+		var item_val = parseFloat($(this).val());
+		if(!isNaN(item_val)) {
+			sum += item_val;
+			}
+	$('#total').val(sum.toFixed(2));
+	});	
+});
+	
+	$('#plusbifteki').click(function() {
+			document.getElementById('qntbifteki').stepUp(1);
+		var biftekitimi = 7.5;
+		var timi = biftekitimi * document.getElementById('qntbifteki').value;
+		var t = timi.toFixed(2);
+			document.getElementById('prcbifteki').value = t;
+			
+		var sum = 0;
+	$('.form-control3').each(function() {
+		var item_val = parseFloat($(this).val());
+		if(!isNaN(item_val)) {
+			sum += item_val;
+			}
+	$('#total').val(sum.toFixed(2));
+	});				
+});
+
+	$('#minusbifteki').click(function() {
+		var biftekitimi = 7.5;
+		var timi = document.getElementById('prcbifteki').value - biftekitimi;
+		var t = timi.toFixed(2);
+			document.getElementById('prcbifteki').value = t;
+		
+		if (document.getElementById('qntbifteki').value == 0) {
+			document.getElementById('prcbifteki').value = 0;}
+		if (document.getElementById('qntbifteki').value > 0) {
+			document.getElementById('qntbifteki').stepDown(1);}
+		else {document.getElementById('qntbifteki').value = 0;
+		}
+		
+		var sum = 0;
+	$('.form-control3').each(function() {
+		var item_val = parseFloat($(this).val());
+		if(!isNaN(item_val)) {
+			sum += item_val;
+			}
+	$('#total').val(sum.toFixed(2));
+	});			
+});
+		
+		var sum = 0;
+	$('.form-control3').each(function() {
+		var item_val = parseFloat($(this).val());
+		if(!isNaN(item_val)) {
+			sum += item_val;
+			}
+	$('#total').val(sum.toFixed(2));
+	});		
+});
+
+$('#amstel').click(function() {
+		var formItem = document.createElement("form");
+		formItem.id="Form";
+		var division = document.createElement("div");
+		division.className="col";
+		division.id = "prdnameamstel";
+		var labelName = document.createElement("label");
+		labelName.innerHTML = "Ονομασία";
+		var inputName = document.createElement("input");
+		inputName.id="nameamstel";
+		inputName.type='text';
+		inputName.value	= 'Amstel 550ml';
+		inputName.className="form-control1";
+		var valueName = document.createElement("value");
+				
+		var division2 = document.createElement("div");
+		division2.className="col";
+		division2.id = "quantity"
+		var buttonminus = document.createElement("button");
+		buttonminus.id='minusamstel';
+		buttonminus.type='button';
+		buttonminus.className="minus-btn";
+		buttonminus.onclick = "function()";
+		buttonminus.textContent = '-';
+		var labelQuant = document.createElement("label");
+		labelQuant.id="qnt";
+		labelQuant.innerHTML = "Τεμάχια ";
+		var inputQuant = document.createElement("input");
+		inputQuant.id="qntamstel";
+		inputQuant.type='number';
+		inputQuant.value = '1';
+		inputQuant.className = "form-control2";
+		var valueQuant = document.createElement("value");
+		var buttonplus = document.createElement("button");
+		buttonplus.id='plusamstel';
+		buttonplus.type='button';
+		buttonplus.className="plus-btn";
+		buttonplus.onclick= "function()";
+		buttonplus.textContent = '+';
+		
+		var division3 = document.createElement("div");
+		division3.className = "col";
+		division3.id = "price";
+		var labelPrice = document.createElement("label");
+		labelPrice.id = "lblpriceid";
+		labelPrice.innerHTML = "Τιμή ";
+		var inputPrice = document.createElement("input");
+		inputPrice.id="prcamstel";
+		inputPrice.type='text';
+		inputPrice.name = 'price';
+		inputPrice.value = '3.00';
+		inputPrice.className="form-control3";
+
+		var buttonremove = document.createElement("button");
+		buttonremove.id='rmvamstel';
+		buttonremove.type='button';
+		buttonremove.className="btn mt-5";
+		buttonremove.onclick='function';
+		buttonremove.textContent = 'X';
+
+		jQuery("#createForm").append(formItem);
+		jQuery("#Form").append(division);
+		jQuery("#prdnameamstel").append(labelName,inputName,valueName,labelQuant,buttonminus,inputQuant,valueQuant,buttonplus,labelPrice,inputPrice, buttonremove);	
+	
+	$('#nameamstel').prop('readonly', true);	
+	$('#qntamstel').prop('readonly', true);	
+	$('#prcamstel').prop('readonly', true);
+	
+	$('#rmvamstel').click(function() {
+		$(this).parent().remove('#prdnameamstel');		
+		var sum = 0;
+	$('.form-control3').each(function() {
+		var item_val = parseFloat($(this).val());
+		if(!isNaN(item_val)) {
+			sum += item_val;
+			}
+	$('#total').val(sum.toFixed(2));
+	});	
+});
+	
+	$('#plusamstel').click(function() {
+			document.getElementById('qntamstel').stepUp(1);
+		var amsteltimi = 3;
+		var timi = amsteltimi * document.getElementById('qntamstel').value;
+		var t = timi.toFixed(2);
+			document.getElementById('prcamstel').value = t;
+		
+		var sum = 0;
+	$('.form-control3').each(function() {
+		var item_val = parseFloat($(this).val());
+		if(!isNaN(item_val)) {
+			sum += item_val;
+			}
+	$('#total').val(sum.toFixed(2));
+	});				
+});
+
+	$('#minusamstel').click(function() {
+		var amsteltimi = 3;
+		var timi = document.getElementById('prcamstel').value - amsteltimi;
+		var t = timi.toFixed(2);
+			document.getElementById('prcamstel').value = t;
+		
+		if (document.getElementById('qntamstel').value == 0) {
+			document.getElementById('prcamstel').value = 0;}
+		if (document.getElementById('qntamstel').value > 0) {
+			document.getElementById('qntamstel').stepDown(1);}
+		else {document.getElementById('qntamstel').value = 0;
+		}
+		
+		var sum = 0;
+	$('.form-control3').each(function() {
+		var item_val = parseFloat($(this).val());
+		if(!isNaN(item_val)) {
+			sum += item_val;
+			}
+	$('#total').val(sum.toFixed(2));
+	});					
+});
+		
+		var sum = 0;
+	$('.form-control3').each(function() {
+		var item_val = parseFloat($(this).val());
+		if(!isNaN(item_val)) {
+			sum += item_val;
+			}
+	$('#total').val(sum.toFixed(2));
+	});		
+});
+
+$('#retsina').click(function() {
+		var formItem = document.createElement("form");
+		formItem.id="Form";
+		var division = document.createElement("div");
+		division.className="col";
+		division.id = "prdnameretsina";
+		var labelName = document.createElement("label");
+		labelName.innerHTML = "Ονομασία";
+		var inputName = document.createElement("input");
+		inputName.id="nameretsina";
+		inputName.type='text';
+		inputName.value	= 'Ρετσίνα Μαλαματίνα 500ml';
+		inputName.className="form-control1";
+		var valueName = document.createElement("value");
+				
+		var division2 = document.createElement("div");
+		division2.className="col";
+		division2.id = "quantity"
+		var buttonminus = document.createElement("button");
+		buttonminus.id='minusretsina';
+		buttonminus.type='button';
+		buttonminus.className="minus-btn";
+		buttonminus.onclick = "function()";
+		buttonminus.textContent = '-';
+		var labelQuant = document.createElement("label");
+		labelQuant.id="qnt";
+		labelQuant.innerHTML = "Τεμάχια ";
+		var inputQuant = document.createElement("input");
+		inputQuant.id="qntretsina";
+		inputQuant.type='number';
+		inputQuant.value = '1';
+		inputQuant.className = "form-control2";
+		var valueQuant = document.createElement("value");
+		var buttonplus = document.createElement("button");
+		buttonplus.id='plusretsina';
+		buttonplus.type='button';
+		buttonplus.className="plus-btn";
+		buttonplus.onclick= "function()";
+		buttonplus.textContent = '+';
+		
+		var division3 = document.createElement("div");
+		division3.className = "col";
+		division3.id = "price";
+		var labelPrice = document.createElement("label");
+		labelPrice.id = "lblpriceid";
+		labelPrice.innerHTML = "Τιμή ";
+		var inputPrice = document.createElement("input");
+		inputPrice.id="prcretsina";
+		inputPrice.type='text';
+		inputPrice.name = 'price';
+		inputPrice.value = '3.00';
+		inputPrice.className="form-control3";
+
+		var buttonremove = document.createElement("button");
+		buttonremove.id='rmvretsina';
+		buttonremove.type='button';
+		buttonremove.className="btn mt-5";
+		buttonremove.onclick='function';
+		buttonremove.textContent = 'X';
+
+		jQuery("#createForm").append(formItem);
+		jQuery("#Form").append(division);
+		jQuery("#prdnameretsina").append(labelName,inputName,valueName,labelQuant,buttonminus,inputQuant,valueQuant,buttonplus,labelPrice,inputPrice, buttonremove);
+	
+	$('#nameretsina').prop('readonly', true);	
+	$('#qntretsina').prop('readonly', true);	
+	$('#prcretsina').prop('readonly', true);
+	
+	$('#rmvretsina').click(function() {
+		$(this).parent().remove('#prdnameretsina');		
+		var sum = 0;
+	$('.form-control3').each(function() {
+		var item_val = parseFloat($(this).val());
+		if(!isNaN(item_val)) {
+			sum += item_val;
+			}
+	$('#total').val(sum.toFixed(2));
+	});	
+});
+	
+	$('#plusretsina').click(function() {
+			document.getElementById('qntretsina').stepUp(1);
+		var retsinatimi = 3;
+		var timi = retsinatimi * document.getElementById('qntretsina').value;
+		var t = timi.toFixed(2);
+			document.getElementById('prcretsina').value = t;
+		
+		var sum = 0;
+	$('.form-control3').each(function() {
+		var item_val = parseFloat($(this).val());
+		if(!isNaN(item_val)) {
+			sum += item_val;
+			}
+	$('#total').val(sum.toFixed(2));
+	});				
+});
+
+	$('#minusretsina').click(function() {
+		var retsinatimi = 3;
+		var timi = document.getElementById('prcretsina').value - retsinatimi;
+		var t = timi.toFixed(2);
+			document.getElementById('prcretsina').value = t;
+		
+		if (document.getElementById('qntretsina').value == 0) {
+			document.getElementById('prcretsina').value = 0;}
+		if (document.getElementById('qntretsina').value > 0) {
+			document.getElementById('qntretsina').stepDown(1);}
+		else {document.getElementById('qntretsina').value = 0;
+		}
+		
+		var sum = 0;
+	$('.form-control3').each(function() {
+		var item_val = parseFloat($(this).val());
+		if(!isNaN(item_val)) {
+			sum += item_val;
+			}
+	$('#total').val(sum.toFixed(2));
+	});					
+});
+		
+		var sum = 0;
+	$('.form-control3').each(function() {
+		var item_val = parseFloat($(this).val());
+		if(!isNaN(item_val)) {
+			sum += item_val;
+			}
+	$('#total').val(sum.toFixed(2));
+	});		
+});
+
+$('#ouzo').click(function() {
+		var formItem = document.createElement("form");
+		formItem.id="Form";
+		var division = document.createElement("div");
+		division.className="col";
+		division.id = "prdnameouzo";
+		var labelName = document.createElement("label");
+		labelName.innerHTML = "Ονομασία";
+		var inputName = document.createElement("input");
+		inputName.id="nameouzo";
+		inputName.type='text';
+		inputName.value	= 'Ούζο Πλωμάρι 50ml';
+		inputName.className="form-control1";
+		var valueName = document.createElement("value");
+				
+		var division2 = document.createElement("div");
+		division2.className="col";
+		division2.id = "quantity"
+		var buttonminus = document.createElement("button");
+		buttonminus.id='minusouzo';
+		buttonminus.type='button';
+		buttonminus.className="minus-btn";
+		buttonminus.onclick = "function()";
+		buttonminus.textContent = '-';
+		var labelQuant = document.createElement("label");
+		labelQuant.id="qnt";
+		labelQuant.innerHTML = "Τεμάχια ";
+		var inputQuant = document.createElement("input");
+		inputQuant.id="qntouzo";
+		inputQuant.type='number';
+		inputQuant.value = '1';
+		inputQuant.className = "form-control2";
+		var valueQuant = document.createElement("value");
+		var buttonplus = document.createElement("button");
+		buttonplus.id='plusouzo';
+		buttonplus.type='button';
+		buttonplus.className="plus-btn";
+		buttonplus.onclick= "function()";
+		buttonplus.textContent = '+';
+		
+		var division3 = document.createElement("div");
+		division3.className = "col";
+		division3.id = "price";
+		var labelPrice = document.createElement("label");
+		labelPrice.id = "lblpriceid";
+		labelPrice.innerHTML = "Τιμή ";
+		var inputPrice = document.createElement("input");
+		inputPrice.id="prcouzo";
+		inputPrice.type='text';
+		inputPrice.name = 'price';
+		inputPrice.value = '2.00';
+		inputPrice.className="form-control3";
+		
+		var buttonremove = document.createElement("button");
+		buttonremove.id='rmvouzo';
+		buttonremove.type='button';
+		buttonremove.className="btn mt-5";
+		buttonremove.onclick='function';
+		buttonremove.textContent = 'X';
+		
+		jQuery("#createForm").append(formItem);
+		jQuery("#Form").append(division);
+		jQuery("#prdnameouzo").append(labelName,inputName,valueName,labelQuant,buttonminus,inputQuant,valueQuant,buttonplus,labelPrice,inputPrice, buttonremove);	
+	
+	$('#nameouzo').prop('readonly', true);	
+	$('#qntouzo').prop('readonly', true);	
+	$('#prcouzo').prop('readonly', true);
+	
+	$('#rmvouzo').click(function() {
+		$(this).parent().remove('#prdnameouzo');		
+		var sum = 0;
+	$('.form-control3').each(function() {
+		var item_val = parseFloat($(this).val());
+		if(!isNaN(item_val)) {
+			sum += item_val;
+			}
+	$('#total').val(sum.toFixed(2));
+	});	
+	/*	show placeholder when in total price input field when removing all products
+		if($("#prcouzo").val() == '') {
+		$("#total").prop('placeholder', "My Placeholder");
+		}*/	
+});
+	
+	$('#plusouzo').click(function() {
+			document.getElementById('qntouzo').stepUp(1);
+		var ouzotimi = 2;
+		var timi = ouzotimi * document.getElementById('qntouzo').value;
+		var t = timi.toFixed(2);
+			document.getElementById('prcouzo').value = t;
+		
+		var sum = 0;
+	$('.form-control3').each(function() {
+		var item_val = parseFloat($(this).val());
+		if(!isNaN(item_val)) {
+			sum += item_val;
+			}
+	$('#total').val(sum.toFixed(2));
+	});				
+});
+
+	$('#minusouzo').click(function() {
+		var ouzotimi = 2;
+		var timi = document.getElementById('prcouzo').value - ouzotimi;
+		var t = timi.toFixed(2);
+			document.getElementById('prcouzo').value = t;
+		
+		if (document.getElementById('qntouzo').value == 0) {
+			document.getElementById('prcouzo').value = 0;}
+		if (document.getElementById('qntouzo').value > 0) {
+			document.getElementById('qntouzo').stepDown(1);}
+		else {document.getElementById('qntouzo').value = 0;
+		}
+		
+		var sum = 0;
+	$('.form-control3').each(function() {
+		var item_val = parseFloat($(this).val());
+		if(!isNaN(item_val)) {
+			sum += item_val;
+			}
+	$('#total').val(sum.toFixed(2));
+	});			
+});
+		
+		var sum = 0;
+	$('.form-control3').each(function() {
+		var item_val = parseFloat($(this).val());
+		if(!isNaN(item_val)) {
+			sum += item_val;
+			}
+	$('#total').val(sum.toFixed(2));
+	});			
+});
+
+</script>
+	
+</body>
+
+</html>	

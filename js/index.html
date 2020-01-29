@@ -1,0 +1,2063 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/style.css">
+	
+	<script src="js/jquery-3.4.1.js"></script>
+	<script src="js/isafter.jquery.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<!--<script src="js/moment.js"></script>-->
+
+	<title>Airline Booking</title>
+</head>
+
+<body>
+	<div class="container">
+	<div class="row">
+		<div class="col-4" id="#list-example" class="list-group">
+			<a class="list-group-item list-group-item-action" href="#list-item-1">Destinations</a>
+			<a class="list-group-item list-group-item-action" href="#list-item-2">Book your flight</a>
+			<a class="list-group-item list-group-item-action" href="#list-item-3">Number of passengers</a>
+			<a class="list-group-item list-group-item-action" href="#list-item-4">Seating options</a>
+			<a class="list-group-item list-group-item-action" href="#list-item-5">Meal options</a>
+		</div>
+		<div class="col-8" data-spy="scroll" data-target="list-example" data-offset="0">
+				<div class="overflow-auto">
+				<h3 id="list-item-1">Destinations</h3>
+				<div class="row">
+				<div class="col-sm-6">
+				<div class"ath">
+				<div class="card" style="width: 18rem;">
+				  <img src="img/athens.jpg" class="card-img-top" alt="Athens">
+				  <div class="card-body">
+					<h5 class="card-title">Athens</h5>
+					<p class="card-text">Price from 120 Euros</p>
+				  </div>
+				</div>
+				</div>
+				</div>
+				<div class="col-sm-6">
+				<div class="card" style="width: 18rem;">
+				  <img src="img/london.jpg" class="card-img-top" alt="London">
+				  <div class="card-body">
+					<h5 class="card-title">London</h5>
+					<p class="card-text">Price from 199 Euros</p>
+				  </div>
+				</div>
+				</div>
+				</div>
+				<div class="row" id="dest2">
+				<div class="col-sm-6">
+				<div class="card" style="width: 18rem;">
+				  <img src="img/paris.jpg" class="card-img-top" alt="Paris">
+				  <div class="card-body">
+					<h5 class="card-title">Paris</h5>
+					<p class="card-text">Price from 150 Euros</p>
+				  </div>
+				</div>
+				</div>
+				<div class="col-sm-6">
+				<div class="card" style="width: 18rem;">
+				  <img src="img/rome.jpg" class="card-img-top" alt="Rome">
+				  <div class="card-body">
+					<h5 class="card-title">Rome</h5>
+					<p class="card-text">Price from 100 Euros</p>
+				  </div>
+				</div>
+				</div>
+				</div>
+				<h3 id="list-item-2">Book your flight</h3>
+					<div class="row">
+						<div class="col">
+							<h6>From</h6>
+							<select id="from" class="ffrom" onchange="flightschedule()">
+								<option selected disabled>Select</option>
+								<option value="Athens">Athens</option>
+								<option value="London">London</option>
+								<option value="Paris">Paris</option>
+								<option value="Rome">Rome</option>
+							</select>
+						</div>
+						<div class="col">
+							<h6>To</h6>
+							<select id="to" class="tto" onchange="setPrice(event); flightschedule()">
+								<option selected disabled>Select</option>
+								<option value="120">Athens</option>
+								<option value="199">London</option>
+								<option value="150">Paris</option>
+								<option value="100">Rome</option>
+							</select>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<table id="athlon">
+								<tr>
+									<th>Flight Number</th>
+									<th>From</th>									
+									<th>To</th>									
+									<th>Time of Departure</th>									
+									<th>Flight Duration</th>									
+									<th>Passenger Capacity</th>									
+									<th>Select Flight</th>
+								</tr>
+								<tr class="schedule">
+									<td>AthLon01</td>
+									<td>Athens</td>
+									<td>London</td>
+									<td class="datetime">24/12/2019 10:30 π.μ.</td>
+									<td class="duration">3h 45m</td>
+									<td>5 seats</td>
+									<td><input class="athtolon" type="checkbox" id="athlon01"></td>
+								</tr>
+								<tr class="schedule">
+									<td>AthLon02</td>
+									<td>Athens</td>
+									<td>London</td>
+									<td class="datetime">24/12/2019 13:30 μ.μ.</td>
+									<td class="duration">3h 45m</td>
+									<td>3 seats</td>
+									<td><input class="athtolon" type="checkbox" id="athlon02"></td>
+								</tr>
+								<tr class="schedule">
+									<td>AthLon03</td>
+									<td>Athens</td>
+									<td>London</td>
+									<td class="datetime">24/12/2019 19:45 μ.μ.</td>
+									<td class="duration">3h 45m</td>
+									<td>6 seats</td>
+									<td><input class="athtolon" type="checkbox" id="athlon03"></td>
+								</tr>
+							</table>	
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<table id="athpar">
+								<tr>
+									<th>Flight Number</th>
+									<th>From</th>									
+									<th>To</th>									
+									<th>Time of Departure</th>									
+									<th>Flight Duration</th>									
+									<th>Passenger Capacity</th>									
+									<th>Select Flight</th>
+								</tr>
+								<tr class="schedule">
+									<td>AthPar01</td>
+									<td>Athens</td>
+									<td>Paris</td>
+									<td class="datetime">18/01/2020 10:30 π.μ.</td>
+									<td class="duration">3h 00m</td>
+									<td>3 seats</td>
+									<td><input class="athtopar" type="checkbox" id="athpar01"></td>
+								</tr>
+								<tr class="schedule">
+									<td>AthPar02</td>
+									<td>Athens</td>
+									<td>Paris</td>
+									<td class="datetime">26/12/2019 22:30 μ.μ.</td>
+									<td class="duration">3h 00m</td>
+									<td>5 seats</td>
+									<td><input class="athtopar" type="checkbox" id="athpar02"></td>
+								</tr>
+								<tr class="schedule">
+									<td>AthPar03</td>
+									<td>Athens</td>
+									<td>Paris</td>
+									<td class="datetime">29/12/2019 10:45 π.μ.</td>
+									<td class="duration">3h 00m</td>
+									<td>6 seats</td>
+									<td><input class="athtopar" type="checkbox" id="athpar03"></td>
+								</tr>
+							</table>	
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<table id="athrome">
+								<tr>
+									<th>Flight Number</th>
+									<th>From</th>									
+									<th>To</th>									
+									<th>Time of Departure</th>									
+									<th>Flight Duration</th>									
+									<th>Passenger Capacity</th>									
+									<th>Select Flight</th>
+								</tr>
+								<tr class="schedule">
+									<td>AthRome01</td>
+									<td>Athens</td>
+									<td>Rome</td>
+									<td class="datetime">29/12/2019 16:30 μ.μ.</td>
+									<td class="duration">1h 15m</td>
+									<td>5 seats</td>
+									<td><input class="athtorome" type="checkbox" id="athrome01"></td>
+								</tr>
+								<tr class="schedule">
+									<td>AthRome02</td>
+									<td>Athens</td>
+									<td>Rome</td>
+									<td class="datetime">30/12/2019 07:30 π.μ.</td>
+									<td class="duration">1h 15m</td>
+									<td>2 seats</td>
+									<td><input class="athtorome" type="checkbox" id="athrome02"></td>
+								</tr>
+								<tr class="schedule">
+									<td>AthRome03</td>
+									<td>Athens</td>
+									<td>Rome</td>
+									<td class="datetime">31/12/2019 17:45 μ.μ.</td>
+									<td class="duration">1h 15m</td>
+									<td>4 seats</td>
+									<td><input class="athtorome" type="checkbox" id="athrome03"></td>
+								</tr>
+							</table>	
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<table id="lonath">
+								<tr>
+									<th>Flight Number</th>
+									<th>From</th>									
+									<th>To</th>									
+									<th>Time of Departure</th>									
+									<th>Flight Duration</th>									
+									<th>Passenger Capacity</th>									
+									<th>Select Flight</th>
+								</tr>
+								<tr class="schedule">
+									<td>LonAth01</td>
+									<td>London</td>
+									<td>Athens</td>
+									<td class="datetime">01/01/2020 05:30 π.μ.</td>
+									<td class="duration">3h 45m</td>
+									<td>3 seats</td>
+									<td><input class="lontoath" type="checkbox" id="lonath01"></td>
+								</tr>
+								<tr class="schedule">
+									<td>LonAth02</td>
+									<td>London</td>
+									<td>Athens</td>
+									<td class="datetime">25/12/2019 17:30 μ.μ.</td>
+									<td class="duration">3h 45m</td>
+									<td>4 seats</td>
+									<td><input class="lontoath" type="checkbox" id="lonath02"></td>
+								</tr>
+								<tr class="schedule">
+									<td>LonAth03</td>
+									<td>London</td>
+									<td>Athens</td>
+									<td class="datetime">29/12/2019 23:45 μ.μ.</td>
+									<td class="duration">3h 45m</td>
+									<td>6 seats</td>
+									<td><input class="lontoath" type="checkbox" id="lonath03"></td>
+								</tr>
+							</table>	
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<table id="lonpar">
+								<tr>
+									<th>Flight Number</th>
+									<th>From</th>									
+									<th>To</th>									
+									<th>Time of Departure</th>									
+									<th>Flight Duration</th>									
+									<th>Passenger Capacity</th>									
+									<th>Select Flight</th>
+								</tr>
+								<tr class="schedule">
+									<td>LonPar01</td>
+									<td>London</td>
+									<td>Paris</td>
+									<td class="datetime">17/12/2019 05:30 π.μ.</td>
+									<td class="duration">1h 00m</td>
+									<td>5 seats</td>
+									<td><input class="lontopar" type="checkbox" id="lonpar01"></td>
+								</tr>
+								<tr class="schedule">
+									<td>LonPar02</td>
+									<td>London</td>
+									<td>Paris</td>
+									<td class="datetime">20/12/2019 23:30 μ.μ.</td>
+									<td class="duration">1h 00m</td>
+									<td>4 seats</td>
+									<td><input class="lontopar" type="checkbox" id="lonpar02"></td>
+								</tr>
+								<tr class="schedule">
+									<td>LonPar03</td>
+									<td>London</td>
+									<td>Paris</td>
+									<td class="datetime">22/12/2019 04:45 π.μ.</td>
+									<td class="duration">1h 00m</td>
+									<td>6 seats</td>
+									<td><input class="lontopar" type="checkbox" id="lonpar03"></td>
+								</tr>
+							</table>	
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<table id="lonrome">
+								<tr>
+									<th>Flight Number</th>
+									<th>From</th>									
+									<th>To</th>									
+									<th>Time of Departure</th>									
+									<th>Flight Duration</th>									
+									<th>Passenger Capacity</th>									
+									<th>Select Flight</th>
+								</tr>
+								<tr class="schedule">
+									<td>LonRome01</td>
+									<td>London</td>
+									<td>Rome</td>
+									<td class="datetime">14/12/2019 05:30 π.μ.</td>
+									<td class="duration">2h 50m</td>
+									<td>3 seats</td>
+									<td><input class="lontorome" type="checkbox" id="lonrome01"></td>
+								</tr>
+								<tr class="schedule">
+									<td>LonRome02</td>
+									<td>London</td>
+									<td>Rome</td>
+									<td class="datetime">16/12/2019 11:15 π.μ.</td>
+									<td class="duration">2h 50m</td>
+									<td>4 seats</td>
+									<td><input class="lontorome" type="checkbox" id="lonrome02"></td>
+								</tr>
+								<tr class="schedule">
+									<td>LonRome03</td>
+									<td>London</td>
+									<td>Rome</td>
+									<td class="datetime">23/12/2019 16:20 μ.μ.</td>
+									<td class="duration">2h 50m</td>
+									<td>5 seats</td>
+									<td><input class="lontorome" type="checkbox" id="lonrome03"></td>
+								</tr>
+							</table>	
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<table id="parath">
+								<tr>
+									<th>Flight Number</th>
+									<th>From</th>									
+									<th>To</th>									
+									<th>Time of Departure</th>									
+									<th>Flight Duration</th>									
+									<th>Passenger Capacity</th>									
+									<th>Select Flight</th>
+								</tr>
+								<tr class="schedule">
+									<td>ParAth01</td>
+									<td>Paris</td>
+									<td>Athens</td>
+									<td class="datetime">18/12/2019 09:00 π.μ.</td>
+									<td class="duration">3h 00m</td>
+									<td>5 seats</td>
+									<td><input class="partoath" type="checkbox" id="parath01"></td>
+								</tr>
+								<tr class="schedule">
+									<td>ParAth02</td>
+									<td>Paris</td>
+									<td>Athens</td>
+									<td class="datetime">26/12/2019 11:15 π.μ.</td>
+									<td class="duration">3h 00m</td>
+									<td>4 seats</td>
+									<td><input class="partoath" type="checkbox" id="parath02"></td>
+								</tr>
+								<tr class="schedule">
+									<td>ParAth03</td>
+									<td>Paris</td>
+									<td>Athens</td>
+									<td class="datetime">24/12/2019 20:00 μ.μ.</td>
+									<td class="duration">3h 00m</td>
+									<td>5 seats</td>
+									<td><input class="partoath" type="checkbox" id="parath03"></td>
+								</tr>
+							</table>	
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<table id="parlon">
+								<tr>
+									<th>Flight Number</th>
+									<th>From</th>									
+									<th>To</th>									
+									<th>Time of Departure</th>									
+									<th>Flight Duration</th>									
+									<th>Passenger Capacity</th>									
+									<th>Select Flight</th>
+								</tr>
+								<tr class="schedule">
+									<td>ParLon01</td>
+									<td>Paris</td>
+									<td>London</td>
+									<td class="datetime">10/12/2019 10:30 π.μ.</td>
+									<td class="duration">1h 00m</td>
+									<td>6 seats</td>
+									<td><input class="partolon" type="checkbox" id="parlon01"></td>
+								</tr>
+								<tr class="schedule">
+									<td>ParLon02</td>
+									<td>Paris</td>
+									<td>London</td>
+									<td class="datetime">28/12/2019 18:30 μ.μ.</td>
+									<td class="duration">1h 00m</td>
+									<td>4 seats</td>
+									<td><input class="partolon" type="checkbox" id="parlon02"></td>
+								</tr>
+								<tr class="schedule">
+									<td>ParLon03</td>
+									<td>Paris</td>
+									<td>London</td>
+									<td class="datetime">27/12/2019 21:00 μ.μ.</td>
+									<td class="duration">1h 00m</td>
+									<td>3 seats</td>
+									<td><input class="partolon" type="checkbox" id="parlon03"></td>
+								</tr>
+							</table>	
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<table id="parrome">
+								<tr>
+									<th>Flight Number</th>
+									<th>From</th>									
+									<th>To</th>									
+									<th>Time of Departure</th>									
+									<th>Flight Duration</th>									
+									<th>Passenger Capacity</th>									
+									<th>Select Flight</th>
+								</tr>
+								<tr class="schedule">
+									<td>ParRome01</td>
+									<td>Paris</td>
+									<td>Rome</td>
+									<td class="datetime">26/12/2019 09:45 π.μ.</td>
+									<td class="duration">2h 30m</td>
+									<td>4 seats</td>
+									<td><input class="partorome" type="checkbox" id="parrome01"></td>
+								</tr>
+								<tr class="schedule">
+									<td>ParRome02</td>
+									<td>Paris</td>
+									<td>Rome</td>
+									<td class="datetime">03/01/2020 14:15 μ.μ.</td>
+									<td class="duration">2h 30m</td>
+									<td>2 seats</td>
+									<td><input class="partorome" type="checkbox" id="parrome02"></td>
+								</tr>
+								<tr class="schedule">
+									<td>ParRome03</td>
+									<td>Paris</td>
+									<td>Rome</td>
+									<td class="datetime">30/12/2019 19:20 μ.μ.</td>
+									<td class="duration">2h 30m</td>
+									<td>5 seats</td>
+									<td><input class="partorome" type="checkbox" id="parrome03"></td>
+								</tr>
+							</table>	
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<table id="romeath">
+								<tr>
+									<th>Flight Number</th>
+									<th>From</th>									
+									<th>To</th>									
+									<th>Time of Departure</th>									
+									<th>Flight Duration</th>									
+									<th>Passenger Capacity</th>									
+									<th>Select Flight</th>
+								</tr>
+								<tr class="schedule">
+									<td>RomeAth01</td>
+									<td>Rome</td>
+									<td>Athens</td>
+									<td class="datetime">29/12/2019 12:45 μ.μ.</td>
+									<td class="duration">1h 15m</td>
+									<td>6 seats</td>
+									<td><input class="rometoath" type="checkbox" id="romeath01"></td>
+								</tr>
+								<tr class="schedule">
+									<td>RomeAth02</td>
+									<td>Rome</td>
+									<td>Athens</td>
+									<td class="datetime">24/12/2019 23:15 μ.μ.</td>
+									<td class="duration">1h 15m</td>
+									<td>2 seats</td>
+									<td><input class="rometoath" type="checkbox" id="romeath02"></td>
+								</tr>
+								<tr class="schedule">
+									<td>RomeAth03</td>
+									<td>Rome</td>
+									<td>Athens</td>
+									<td class="datetime">30/12/2019 08:00 π.μ.</td>
+									<td class="duration">1h 15m</td>
+									<td>5 seats</td>
+									<td><input class="rometoath" type="checkbox" id="romeath03"></td>
+								</tr>
+							</table>	
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<table id="romelon">
+								<tr>
+									<th>Flight Number</th>
+									<th>From</th>									
+									<th>To</th>									
+									<th>Time of Departure</th>									
+									<th>Flight Duration</th>									
+									<th>Passenger Capacity</th>									
+									<th>Select Flight</th>
+								</tr>
+								<tr class="schedule">
+									<td>RomeLon01</td>
+									<td>Rome</td>
+									<td>London</td>
+									<td class="datetime">28/12/2019 11:45 π.μ.</td>
+									<td class="duration">2h 50m</td>
+									<td>4 seats</td>
+									<td><input class="rometolon" type="checkbox" id="romelon01"></td>
+								</tr>
+								<tr class="schedule">
+									<td>RomeLon02</td>
+									<td>Rome</td>
+									<td>London</td>
+									<td class="datetime">22/12/2019 15:15 μ.μ.</td>
+									<td class="duration">2h 50m</td>
+									<td>5 seats</td>
+									<td><input class="rometolon" type="checkbox" id="romelon02"></td>
+								</tr>
+								<tr class="schedule">
+									<td>RomeLon03</td>
+									<td>Rome</td>
+									<td>London</td>
+									<td class="datetime">30/12/2019 23:00 μ.μ.</td>
+									<td class="duration">2h 50m</td>
+									<td>6 seats</td>
+									<td><input class="rometolon" type="checkbox" id="romelon03"></td>
+								</tr>
+							</table>	
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<table id="romepar">
+								<tr>
+									<th>Flight Number</th>
+									<th>From</th>									
+									<th>To</th>									
+									<th>Time of Departure</th>									
+									<th>Flight Duration</th>									
+									<th>Passenger Capacity</th>									
+									<th>Select Flight</th>
+								</tr>
+								<tr class="schedule">
+									<td>RomePar01</td>
+									<td>Rome</td>
+									<td>Paris</td>
+									<td class="datetime">29/12/2019 12:15 μ.μ.</td>
+									<td class="duration">2h 30m</td>
+									<td>4 seats</td>
+									<td><input class="rometopar" type="checkbox" id="romepar01"></td>
+								</tr>
+								<tr class="schedule">
+									<td>RomePar02</td>
+									<td>Rome</td>
+									<td>Paris</td>
+									<td class="datetime">06/01/2020 10:15 π.μ.</td>
+									<td class="duration">2h 30m</td>
+									<td>6 seats</td>
+									<td><input class="rometopar" type="checkbox" id="romepar02"></td>
+								</tr>
+								<tr class="schedule">
+									<td>RomePar03</td>
+									<td>Rome</td>
+									<td>Paris</td>
+									<td class="datetime">25/12/2019 19:20 μ.μ.</td>
+									<td class="duration">2h 30m</td>
+									<td>5 seats</td>
+									<td><input class="rometopar" type="checkbox" id="romepar03"></td>
+								</tr>
+							</table>	
+						</div>
+					</div>					
+					<div class="row">
+						<div class="col">
+						<h6 id="depdate">Departure</h6><br>
+						<input id="dep" type="text" readonly>
+						</div>
+						<div class="col">
+						<h6 id="arridate">Arrival</h6><br>
+						<input id="arri" type="text" readonly>
+					</div>
+					</div>
+					<div class="row">
+						<div class="col">
+						<div class="form-check">
+						  <input class="form-check-input" type="checkbox" name="ret" id="return">
+						  <label class="form-check-label" for="return">
+							return
+						  </label>
+						</div>
+						</div>
+					</div>
+					<div id="retschedule">
+					</div>	
+					<div class="row">
+						<div class="col">
+						<h5 id="retdate">Return date</h5>
+						</div>
+						</div>
+						<div class="row">
+						<div class="col">
+						<h6 id="retdepdate">Departure</h6><br>
+						<input id="retdep" type="text" readonly>
+						</div>
+						<div class="col">
+						<h6 id="retarridate">Arrival</h6><br>
+						<input id="retarri" type="text" readonly>
+					</div>
+					</div>
+			<h3 id="list-item-3">Number of passengers</h3>
+				<div class="row">
+					<div class="col-2">
+					<select id="nr" class="custom-select" onchange="pricePassengersnr(event)">
+					  <option selected disabled>Select</option>
+					  <option value="1">1</option>
+					  <option value="2">2</option>
+					  <option value="3">3</option>
+					  <option value="4">4</option>
+					  <option value="5">5</option>
+					  <option value="6">6</option>
+					</select>
+					</div>
+					<div class="col">
+					</div>
+				</div>
+				<div id="passengers" class="row">
+					<div id="p1" class="col-3">
+						<h6>Passenger 1</h6>
+						<label>First Name</label>
+						<input id="p1fname" type="text">
+						<label>Last Name</label>
+						<input id="p1lname" type="text">
+						<label>DoB</label>
+						<input id="p1dob" type="date">
+					</div>
+					<div id="p2" class="col-3">
+						<h6>Passenger 2</h6>
+						<label>First Name</label>
+						<input id="p2fname" type="text">
+						<label>Last Name</label>
+						<input id="p2lname" type="text">
+						<label>DoB</label>
+						<input id="p2dob" type="date">
+					</div>
+					<div id="p3" class="col-3">
+						<h6>Passenger 3</h6>
+						<label>First Name</label>
+						<input id="p3fname" type="text">
+						<label>Last Name</label>
+						<input id="p3lname" type="text">
+						<label>DoB</label>
+						<input id="p3dob" type="date">
+					</div>
+					<div id="p4" class="col-3">
+						<h6>Passenger 4</h6>
+						<label>First Name</label>
+						<input id="p4fname" type="text">
+						<label>Last Name</label>
+						<input id="p4lname" type="text">
+						<label>DoB</label>
+						<input id="p4dob" type="date">
+					</div>
+					<div id="p5" class="col-3">
+						<h6>Passenger 5</h6>
+						<label>First Name</label>
+						<input id="p5fname" type="text">
+						<label>Last Name</label>
+						<input id="p5lname" type="text">
+						<label>DoB</label>
+						<input id="p5dob" type="date">
+					</div>
+					<div id="p6" class="col-3">
+						<h6>Passenger 6</h6>
+						<label>First Name</label>
+						<input id="p6fname" type="text">
+						<label>Last Name</label>
+						<input id="p6lname" type="text">
+						<label>DoB</label>
+						<input id="p6dob" type="date">
+					</div>
+				</div>
+			<h3 id="list-item-4">Seating options</h3>
+			<div id="p1seat" class="row">
+				<div class="col">
+					<h6>Passenger 1</h6>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="p1class" id="p1first" value="pClass">
+				  <label class="form-check-label" for="p1first">First Class</label>
+				</div>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="p1class" id="p1business" value="pClass">
+				  <label class="form-check-label" for="p1business">Business Class</label>
+				</div>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="p1class" id="p1economy" value="pClass">
+				  <label class="form-check-label" for="p1economy">Economy Class</label>
+				<span class="btn-separator"></span>
+				</div>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="p1Seat" id="p1aisle" value="Aisle">
+				  <label class="form-check-label" for="p1aisle">Aisle</label>
+				</div>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="p1Seat" id="p1middle" value="Middle">
+				  <label class="form-check-label" for="p1middle">Middle</label>
+				</div>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="p1Seat" id="p1window" value="Window">
+				  <label class="form-check-label" for="p1window">Window</label>
+				</div>
+				</div>
+				</div>
+			<div id="p2seat" class="row">
+				<div class="col">
+					<h6>Passenger 2</h6>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="p2Class" id="p2first" value="pClass">
+				  <label class="form-check-label" for="p2first">First Class</label>
+				</div>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="p2Class" id="p2business" value="pClass">
+				  <label class="form-check-label" for="p2business">Business Class</label>
+				</div>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="p2Class" id="p2economy" value="pClass">
+				  <label class="form-check-label" for="p2economy">Economy Class</label>
+				  <span class="btn-separator"></span>
+				</div>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="p2Seat" id="p2aisle" value="Aisle">
+				  <label class="form-check-label" for="p2aisle">Aisle</label>
+				</div>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="p2Seat" id="p2middle" value="Middle">
+				  <label class="form-check-label" for="p2middle">Middle</label>
+				</div>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="p2Seat" id="p2window" value="Window">
+				  <label class="form-check-label" for="p2window">Window</label>
+				</div>
+				</div>
+			</div>	
+			<div id="p3seat" class="row">
+				<div class="col">
+					<h6>Passenger 3</h6>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="p3Class" id="p3first" value="pClass">
+				  <label class="form-check-label" for="p3first">First Class</label>
+				</div>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="p3Class" id="p3business" value="pClass">
+				  <label class="form-check-label" for="p3business">Business Class</label>
+				</div>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="p3Class" id="p3economy" value="pClass">
+				  <label class="form-check-label" for="p3economy">Economy Class</label>
+				  <span class="btn-separator"></span>
+				</div>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="p3Seat" id="p3aisle" value="Aisle">
+				  <label class="form-check-label" for="p3aisle">Aisle</label>
+				</div>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="p3Seat" id="p3middle" value="Middle">
+				  <label class="form-check-label" for="p3middle">Middle</label>
+				</div>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="p3Seat" id="p3window" value="Window">
+				  <label class="form-check-label" for="p3window">Window</label>
+				</div>
+				</div>
+			</div>
+			<div id="p4seat" class="row">
+				<div class="col">
+					<h6>Passenger 4</h6>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="p4Class" id="p4first" value="pClass">
+				  <label class="form-check-label" for="p4first">First Class</label>
+				</div>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="p4Class" id="p4business" value="pClass">
+				  <label class="form-check-label" for="p4business">Business Class</label>
+				</div>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="p4Class" id="p4economy" value="pClass">
+				  <label class="form-check-label" for="p4economy">Economy Class</label>
+				  <span class="btn-separator"></span>
+				</div>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="p4Seat" id="p4aisle" value="Aisle">
+				  <label class="form-check-label" for="p4aisle">Aisle</label>
+				</div>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="p4Seat" id="p4middle" value="Middle">
+				  <label class="form-check-label" for="p4middle">Middle</label>
+				</div>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="p4Seat" id="p4window" value="Window">
+				  <label class="form-check-label" for="p4window">Window</label>
+				</div>
+				</div>
+			</div>
+			<div id="p5seat" class="row">
+				<div class="col">
+					<h6>Passenger 5</h6>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="p5Class" id="p5first" value="pClass">
+				  <label class="form-check-label" for="p5first">First Class</label>
+				</div>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="p5Class" id="p5business" value="pClass">
+				  <label class="form-check-label" for="p5business">Business Class</label>
+				</div>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="p5Class" id="p5economy" value="pClass">
+				  <label class="form-check-label" for="p5economy">Economy Class</label>
+				  <span class="btn-separator"></span>
+				</div>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="p5Seat" id="p5aisle" value="Aisle">
+				  <label class="form-check-label" for="p5aisle">Aisle</label>
+				</div>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="p5Seat" id="p5middle" value="Middle">
+				  <label class="form-check-label" for="p5middle">Middle</label>
+				</div>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="p5Seat" id="p5window" value="Window">
+				  <label class="form-check-label" for="p5window">Window</label>
+				</div>
+				</div>
+			</div>
+			<div id="p6seat" class="row">
+				<div class="col">
+					<h6>Passenger 6</h6>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="p6Class" id="p6first" value="pClass">
+				  <label class="form-check-label" for="p6first">First Class</label>
+				</div>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="p6Class" id="p6business" value="pClass">
+				  <label class="form-check-label" for="p6business">Business Class</label>
+				</div>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="p6Class" id="p6economy" value="pClass">
+				  <label class="form-check-label" for="p6economy">Economy Class</label>
+				  <span class="btn-separator"></span>
+				</div>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="p6Seat" id="p6aisle" value="Aisle">
+				  <label class="form-check-label" for="p6aisle">Aisle</label>
+				</div>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="p6Seat" id="p6middle" value="Middle">
+				  <label class="form-check-label" for="p6middle">Middle</label>
+				</div>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="p6Seat" id="p6window" value="Window">
+				  <label class="form-check-label" for="p6window">Window</label>
+				</div>
+				</div>
+			</div>
+			<h3 id="list-item-5">Meal options</h3>
+			<div id="p1meal" class="row">
+				<div class="col">
+				<h6>Passenger 1</h6>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="p1Meal" id="p1normal" value="p1Normal">
+				  <label class="form-check-label" for="p1normal">Normal</label>
+				</div>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="p1Meal" id="p1vegetarian" value="p1Vegetarian">
+				  <label class="form-check-label" for="p1vegetarian">Vegetarian</label>
+				</div>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="p1Meal" id="p1vegan" value="p1Vegan">
+				  <label class="form-check-label" for="p1vegan">Vegan</label>
+				</div>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="p1Meal" id="p1special" value="p1Special">
+				  <label class="form-check-label" for="p1special">Special</label>
+				</div>
+				<div class="form-group row">
+					<label id="p1sp-order-lbl" for="p1specialorder" class="col-sm-2 col-form-label">Meal Order:</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="p1specialorder">
+					</div>
+				 </div>
+				</div>
+				</div>
+				<div id="p2meal" class="row">
+				<div class="col">
+				<h6>Passenger 2</h6>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="p2Meal" id="p2normal" value="p2Normal">
+				  <label class="form-check-label" for="p2normal">Normal</label>
+				</div>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="p2Meal" id="p2vegetarian" value="p2Vegetarian">
+				  <label class="form-check-label" for="p2vegetarian">Vegetarian</label>
+				</div>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="p2Meal" id="p2vegan" value="p2Vegan">
+				  <label class="form-check-label" for="p2vegan">Vegan</label>
+				</div>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="p2Meal" id="p2special" value="p2Special">
+				  <label class="form-check-label" for="p2special">Special</label>
+				</div>
+				<div class="form-group row">
+					<label id="p2sp-order-lbl" for="p2specialorder" class="col-sm-2 col-form-label">Meal Order:</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="p2specialorder">
+					</div>
+				 </div>
+				</div>
+				</div>
+				<div id="p3meal" class="row">
+				<div class="col">
+				<h6>Passenger 3</h6>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="p3Meal" id="p3normal" value="p3Normal">
+				  <label class="form-check-label" for="p3normal">Normal</label>
+				</div>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="p3Meal" id="p3vegetarian" value="p3Vegetarian">
+				  <label class="form-check-label" for="p3vegetarian">Vegetarian</label>
+				</div>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="p3Meal" id="p3vegan" value="p3Vegan">
+				  <label class="form-check-label" for="p3vegan">Vegan</label>
+				</div>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="p3Meal" id="p3special" value="p3Special">
+				  <label class="form-check-label" for="p3special">Special</label>
+				</div>
+				<div class="form-group row">
+					<label id="p3sp-order-lbl" for="p3specialorder" class="col-sm-2 col-form-label">Meal Order:</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="p3specialorder">
+					</div>
+				 </div>
+				</div>
+				</div>
+				<div id="p4meal" class="row">
+				<div class="col">
+				<h6>Passenger 4</h6>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="p4Meal" id="p4normal" value="p4Normal">
+				  <label class="form-check-label" for="p4normal">Normal</label>
+				</div>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="p4Meal" id="p4vegetarian" value="p4Vegetarian">
+				  <label class="form-check-label" for="p4vegetarian">Vegetarian</label>
+				</div>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="p4Meal" id="p4vegan" value="p4Vegan">
+				  <label class="form-check-label" for="p4vegan">Vegan</label>
+				</div>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="p4Meal" id="p4special" value="p4Special">
+				  <label class="form-check-label" for="p4special">Special</label>
+				</div>
+				<div class="form-group row">
+					<label id="p4sp-order-lbl" for="p4specialorder" class="col-sm-2 col-form-label">Meal Order:</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="p4specialorder">
+					</div>
+				 </div>
+				</div>
+				</div>
+				<div id="p5meal" class="row">
+				<div class="col">
+				<h6>Passenger 5</h6>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="p5Meal" id="p5normal" value="p5Normal">
+				  <label class="form-check-label" for="p5normal">Normal</label>
+				</div>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="p5Meal" id="p5vegetarian" value="p5Vegetarian">
+				  <label class="form-check-label" for="p5vegetarian">Vegetarian</label>
+				</div>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="p5Meal" id="p5vegan" value="p5Vegan">
+				  <label class="form-check-label" for="p5vegan">Vegan</label>
+				</div>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="p5Meal" id="p5special" value="p5Special">
+				  <label class="form-check-label" for="p5special">Special</label>
+				</div>
+				<div class="form-group row">
+					<label id="p5sp-order-lbl" for="p5specialorder" class="col-sm-2 col-form-label">Meal Order:</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="p5specialorder">
+					</div>
+				 </div>
+				</div>
+				</div>
+				<div id="p6meal" class="row">
+				<div class="col">
+				<h6>Passenger 6</h6>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="p6Meal" id="p6normal" value="p6Normal">
+				  <label class="form-check-label" for="p6normal">Normal</label>
+				</div>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="p6Meal" id="p6vegetarian" value="p6Vegetarian">
+				  <label class="form-check-label" for="p6vegetarian">Vegetarian</label>
+				</div>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="p6Meal" id="p6vegan" value="p6Vegan">
+				  <label class="form-check-label" for="p6vegan">Vegan</label>
+				</div>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="p6Meal" id="p6special" value="p6Special">
+				  <label class="form-check-label" for="p6special">Special</label>
+				</div>
+				<div class="form-group row">
+					<label id="p6sp-order-lbl" for="p6specialorder" class="col-sm-2 col-form-label">Meal Order:</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="p6specialorder">
+					</div>
+				 </div>
+				</div>
+				</div>
+		</div>
+		</div>
+		<div class="price">
+		<h3>Price</h3>
+		<input id="price" type="text" readonly />
+		<input id="hide" type="hidden" readonly />
+		<p>Euros</p>
+		</div>
+	</div>
+	</div>
+</body>
+
+</html>
+
+<script>
+//scrollspy
+$('.col-8').scrollspy({ target: '#list-example' });
+//match destination to cost	
+document.querySelector('.ffrom').addEventListener('change', function () {
+	document.querySelector('option[value="120"]').disabled = this.value === 'Athens';
+});
+
+document.querySelector('.ffrom').addEventListener('change', function () {
+	document.querySelector('option[value="199"]').disabled = this.value === 'London';
+});
+
+document.querySelector('.ffrom').addEventListener('change', function () {
+	document.querySelector('option[value="150"]').disabled = this.value === 'Paris';
+});
+
+document.querySelector('.ffrom').addEventListener('change', function () {
+	document.querySelector('option[value="100"]').disabled = this.value === 'Rome';
+});
+
+document.querySelector('.tto').addEventListener('change', function () {
+	document.querySelector('option[value="Athens"]').disabled = this.value === '120';
+});
+
+document.querySelector('.tto').addEventListener('change', function () {
+	document.querySelector('option[value="London"]').disabled = this.value === '199';
+});
+
+document.querySelector('.tto').addEventListener('change', function () {
+	document.querySelector('option[value="Paris"]').disabled = this.value === '150';
+});
+
+document.querySelector('.tto').addEventListener('change', function () {
+	document.querySelector('option[value="Rome"]').disabled = this.value === '100';
+});
+// show / hide return info when option is checked or not
+$(document).ready(function() {
+	$('input[name="ret"]').click(function() {
+		if($(this).is(":checked")) {
+		document.getElementById('retdate').style.display = "block";
+		document.getElementById('retdepdate').style.display = "block";
+		document.getElementById('retarridate').style.display = "block";
+		document.getElementById('retdep').style.display = "block";
+		document.getElementById('retarri').style.display = "block";
+		}
+		else if($(this).is(":not(:checked)")) {
+		document.getElementById('retdate').style.display = "none";
+		document.getElementById('retdepdate').style.display = "none";
+		document.getElementById('retarridate').style.display = "none";
+		document.getElementById('retdep').style.display = "none";
+		document.getElementById('retarri').style.display = "none";
+		}
+//PROBLEM second table now always appears after return checkbox, even when it's the first trip ex LonAth still appears under return when it shouldn't cause return isn't checked
+		if($(this).is(":checked") && ($("#from option").filter(":selected").text() == "Athens") && ($("#to option").filter(":selected").text() == "London")) {
+			$("#lonath").insertAfter($("#retschedule"));
+			document.getElementById("lonath").style.display = "block";
+		}
+		else if($(this).is(":not(:checked)")) {
+			document.getElementById("lonath").style.display = "none";
+		}
+		else if($(this).is(":not(:checked") && ($("#from option").filter(":selected").text() == "London") && ($("#to option").filter(":selected").text() == "Athens")) {
+			$("#lonath").insertBefore($("#departure"));
+			document.getElementById("lonath").style.display = "block";
+		}
+	});	
+});
+//show / hide passenger's meal and special meal order 
+$(function () {
+	$("#nr").change(function() {
+		var val = $(this).val();
+		if(val === "1") {
+			$("#p1").show();
+			$("#p2").hide();
+			$("#p3").hide();
+			$("#p4").hide();
+			$("#p5").hide();
+			$("#p6").hide();
+			$("#p1seat").show();
+			$("#p2seat").hide();
+			$("#p3seat").hide();
+			$("#p4seat").hide();
+			$("#p5seat").hide();
+			$("#p6seat").hide();
+			$("#p1meal").show();
+			$("#p2meal").hide();
+			$("#p3meal").hide();
+			$("#p4meal").hide();
+			$("#p5meal").hide();
+			$("#p6meal").hide();
+			}
+		else if(val === "2") {
+			$("#p1").show();
+			$("#p2").show();
+			$("#p3").hide();
+			$("#p4").hide();
+			$("#p5").hide();
+			$("#p6").hide();
+			$("#p1seat").show();
+			$("#p2seat").show();
+			$("#p3seat").hide();
+			$("#p4seat").hide();
+			$("#p5seat").hide();
+			$("#p6seat").hide();
+			$("#p1meal").show();
+			$("#p2meal").show();
+			$("#p3meal").hide();
+			$("#p4meal").hide();
+			$("#p5meal").hide();
+			$("#p6meal").hide();
+			}
+		else if(val === "3") {
+			$("#p1").show();
+			$("#p2").show();
+			$("#p3").show();
+			$("#p4").hide();
+			$("#p5").hide();
+			$("#p6").hide();
+			$("#p1seat").show();
+			$("#p2seat").show();
+			$("#p3seat").show();
+			$("#p4seat").hide();
+			$("#p5seat").hide();
+			$("#p6seat").hide();
+			$("#p1meal").show();
+			$("#p2meal").show();
+			$("#p3meal").show();
+			$("#p4meal").hide();
+			$("#p5meal").hide();
+			$("#p6meal").hide();
+
+			}
+		else if(val === "4") {
+			$("#p1").show();
+			$("#p2").show();
+			$("#p3").show();
+			$("#p4").show();
+			$("#p5").hide();
+			$("#p6").hide();
+			$("#p1seat").show();
+			$("#p2seat").show();
+			$("#p3seat").show();
+			$("#p4seat").show();
+			$("#p5seat").hide();
+			$("#p6seat").hide();
+			$("#p1meal").show();
+			$("#p2meal").show();
+			$("#p3meal").show();
+			$("#p4meal").show();
+			$("#p5meal").hide();
+			$("#p6meal").hide();
+			}
+		else if(val === "5") {
+			$("#p1").show();
+			$("#p2").show();
+			$("#p3").show();
+			$("#p4").show();
+			$("#p5").show();
+			$("#p6").hide();
+			$("#p1seat").show();
+			$("#p2seat").show();
+			$("#p3seat").show();
+			$("#p4seat").show();
+			$("#p5seat").show();
+			$("#p6seat").hide();
+			$("#p1meal").show();
+			$("#p2meal").show();
+			$("#p3meal").show();
+			$("#p4meal").show();
+			$("#p5meal").show();
+			$("#p6meal").hide();
+			}
+		else if(val === "6") {
+			$("#p1").show();
+			$("#p2").show();
+			$("#p3").show();
+			$("#p4").show();
+			$("#p5").show();
+			$("#p6").show();
+			$("#p1seat").show();
+			$("#p2seat").show();
+			$("#p3seat").show();
+			$("#p4seat").show();
+			$("#p5seat").show();
+			$("#p6seat").show();
+			$("#p1meal").show();
+			$("#p2meal").show();
+			$("#p3meal").show();
+			$("#p4meal").show();
+			$("#p5meal").show();
+			$("#p6meal").show();
+			}
+		});
+	});
+			
+$(document).ready(function() {
+	$('input[value="p1Special"]').click(function() {
+		if($(this).attr('id') == 'p1special') {
+			$('#p1sp-order-lbl').show();
+			$('#p1specialorder').show();
+		}
+		});
+	$('input[value="p1Normal"]').click(function() {
+		if($(this).attr('id') == 'p1normal') {
+			$('#p1sp-order-lbl').hide();
+			$('#p1specialorder').hide();
+		}
+		});
+	$('input[value="p1Vegetarian"]').click(function() {
+		if($(this).attr('id') == 'p1vegetarian') {
+			$('#p1sp-order-lbl').hide();
+			$('#p1specialorder').hide();
+		}
+		});
+	$('input[value="p1Vegan"]').click(function() {
+		if($(this).attr('id') == 'p1vegan') {
+			$('#p1sp-order-lbl').hide();
+			$('#p1specialorder').hide();
+		}	
+	});
+});
+
+$(document).ready(function() {
+	$('input[value="p2Special"]').click(function() {
+		if($(this).attr('id') == 'p2special') {
+			$('#p2sp-order-lbl').show();
+			$('#p2specialorder').show();
+		}
+		});
+	$('input[value="p2Normal"]').click(function() {
+		if($(this).attr('id') == 'p2normal') {
+			$('#p2sp-order-lbl').hide();
+			$('#p2specialorder').hide();
+		}
+		});
+	$('input[value="p2Vegetarian"]').click(function() {
+		if($(this).attr('id') == 'p2vegetarian') {
+			$('#p2sp-order-lbl').hide();
+			$('#p2specialorder').hide();
+		}
+		});
+	$('input[value="p2Vegan"]').click(function() {
+		if($(this).attr('id') == 'p2vegan') {
+			$('#p2sp-order-lbl').hide();
+			$('#p2specialorder').hide();
+		}	
+	});
+});
+
+$(document).ready(function() {
+	$('input[value="p3Special"]').click(function() {
+		if($(this).attr('id') == 'p3special') {
+			$('#p3sp-order-lbl').show();
+			$('#p3specialorder').show();
+		}
+		});
+	$('input[value="p3Normal"]').click(function() {
+		if($(this).attr('id') == 'p3normal') {
+			$('#p3sp-order-lbl').hide();
+			$('#p3specialorder').hide();
+		}
+		});
+	$('input[value="p3Vegetarian"]').click(function() {
+		if($(this).attr('id') == 'p3vegetarian') {
+			$('#p3sp-order-lbl').hide();
+			$('#p3specialorder').hide();
+		}
+		});
+	$('input[value="p3Vegan"]').click(function() {
+		if($(this).attr('id') == 'p3vegan') {
+			$('#p3sp-order-lbl').hide();
+			$('#p3specialorder').hide();
+		}	
+	});
+});
+
+$(document).ready(function() {
+	$('input[value="p4Special"]').click(function() {
+		if($(this).attr('id') == 'p4special') {
+			$('#p4sp-order-lbl').show();
+			$('#p4specialorder').show();
+		}
+		});
+	$('input[value="p4Normal"]').click(function() {
+		if($(this).attr('id') == 'p4normal') {
+			$('#p4sp-order-lbl').hide();
+			$('#p4specialorder').hide();
+		}
+		});
+	$('input[value="p4Vegetarian"]').click(function() {
+		if($(this).attr('id') == 'p4vegetarian') {
+			$('#p4sp-order-lbl').hide();
+			$('#p4specialorder').hide();
+		}
+		});
+	$('input[value="p4Vegan"]').click(function() {
+		if($(this).attr('id') == 'p4vegan') {
+			$('#p4sp-order-lbl').hide();
+			$('#p4specialorder').hide();
+		}	
+	});
+});
+
+$(document).ready(function() {
+	$('input[value="p5Special"]').click(function() {
+		if($(this).attr('id') == 'p5special') {
+			$('#p5sp-order-lbl').show();
+			$('#p5specialorder').show();
+		}
+		});
+	$('input[value="p5Normal"]').click(function() {
+		if($(this).attr('id') == 'p5normal') {
+			$('#p5sp-order-lbl').hide();
+			$('#p5specialorder').hide();
+		}
+		});
+	$('input[value="p5Vegetarian"]').click(function() {
+		if($(this).attr('id') == 'p5vegetarian') {
+			$('#p5sp-order-lbl').hide();
+			$('#p5specialorder').hide();
+		}
+		});
+	$('input[value="p5Vegan"]').click(function() {
+		if($(this).attr('id') == 'p5vegan') {
+			$('#p5sp-order-lbl').hide();
+			$('#p5specialorder').hide();
+		}	
+	});
+});
+
+$(document).ready(function() {
+	$('input[value="p6Special"]').click(function() {
+		if($(this).attr('id') == 'p6special') {
+			$('#p6sp-order-lbl').show();
+			$('#p6specialorder').show();
+		}
+		});
+	$('input[value="p6Normal"]').click(function() {
+		if($(this).attr('id') == 'p6normal') {
+			$('#p6sp-order-lbl').hide();
+			$('#p6specialorder').hide();
+		}
+		});
+	$('input[value="p6Vegetarian"]').click(function() {
+		if($(this).attr('id') == 'p6vegetarian') {
+			$('#p6sp-order-lbl').hide();
+			$('#p6specialorder').hide();
+		}
+		});
+	$('input[value="p6Vegan"]').click(function() {
+		if($(this).attr('id') == 'p6vegan') {
+			$('#p6sp-order-lbl').hide();
+			$('#p6specialorder').hide();
+		}	
+	});
+});
+// set price depending on passenger number and each passenger's seating class
+var a;
+var b;
+var c;
+var d;
+var e;
+var f;
+$(document).ready(function() {
+	$('input[value="pClass"]').click(function() {
+			var p = parseInt(document.getElementById('hide').value);
+			if($(this).attr('id') == 'p1first') {
+				a = document.getElementById('price').value = p + 100;
+			}
+			else if($(this).attr('id') == 'p1business') {
+				a = document.getElementById('price').value = p + 50;
+			}
+			else if($(this).attr('id') == 'p1economy') {
+				a = document.getElementById('price').value = p;
+			}
+			if($(this).attr('id') == 'p2first') {
+				b = document.getElementById('price').value = a + 100;
+			}
+			else if($(this).attr('id') == 'p2business') {
+				b = document.getElementById('price').value = a + 50;
+			}
+			else if($(this).attr('id') == 'p2economy') {
+				b = document.getElementById('price').value = a;
+			}
+			if($(this).attr('id') == 'p3first') {
+				c = document.getElementById('price').value = b + 100;
+			}
+			else if($(this).attr('id') == 'p3business') {
+				c = document.getElementById('price').value = b + 50;
+			}
+			else if($(this).attr('id') == 'p3economy') {
+				c = document.getElementById('price').value = b;
+			}
+			if($(this).attr('id') == 'p4first') {
+				d = document.getElementById('price').value = c + 100;
+			}
+			else if($(this).attr('id') == 'p4business') {
+				d = document.getElementById('price').value = c + 50;
+			}
+			else if($(this).attr('id') == 'p4economy') {
+				d = document.getElementById('price').value = c;
+			}
+			if($(this).attr('id') == 'p5first') {
+				e = document.getElementById('price').value = d + 100;
+			}
+			else if($(this).attr('id') == 'p5business') {
+				e = document.getElementById('price').value = d + 50;
+			}
+			else if($(this).attr('id') == 'p5economy') {
+				e = document.getElementById('price').value = d;
+			}
+			if($(this).attr('id') == 'p6first') {
+				f = document.getElementById('price').value = e + 100;
+			}
+			else if($(this).attr('id') == 'p6business') {
+				f = document.getElementById('price').value = e + 50;
+			}
+			else if($(this).attr('id') == 'p6economy') {
+				f = document.getElementById('price').value = e;
+			}
+	});
+});
+//set price of selected flight and if return is checked or not
+function setPrice(e) {
+	document.getElementById('price').value = e.target.value;
+	document.getElementById('hide').value = e.target.value;
+	var ip = parseInt(document.getElementById('price').value);
+	var input = document.querySelector('input[name=ret]');
+	function check() {
+	var a = input.checked ? ip+((ip*80)/100) : e.target.value;
+	}
+	input.onchange = check;
+	check();
+}
+//set price according to passenger number and if return is checked or not
+function pricePassengersnr(e) {
+	var dest = document.getElementById('to');
+	var destprice = dest.options[dest.selectedIndex].value;
+	var ip = parseInt(dest.options[dest.selectedIndex].value);
+	var input = document.querySelector('input[name=ret]');
+	
+	function check() {
+	var a = input.checked ? ((ip+(ip*80)/100) * e.target.value) : e.target.value * destprice;
+	document.getElementById('price').value = a;
+	document.getElementById('hide').value = a;
+	}
+	input.onchange = check;
+	check();
+}
+//only able to select one flight from schedule table
+$('input.athtolon').on('change', function() {
+	$('input.athtolon').not(this).prop('checked', false);
+});
+
+$('input.athtopar').on('change', function() {
+	$('input.athtopar').not(this).prop('checked', false);
+});
+
+$('input.athtorome').on('change', function() {
+	$('input.athtorome').not(this).prop('checked', false);
+});
+
+$('input.lontoath').on('change', function() {
+	$('input.lontoath').not(this).prop('checked', false);
+});
+
+$('input.lontopar').on('change', function() {
+	$('input.lontopar').not(this).prop('checked', false);
+});
+
+$('input.lontorome').on('change', function() {
+	$('input.lontorome').not(this).prop('checked', false);
+});
+
+$('input.partoath').on('change', function() {
+	$('input.partoath').not(this).prop('checked', false);
+});
+
+$('input.partolon').on('change', function() {
+	$('input.partolon').not(this).prop('checked', false);
+});
+
+$('input.partorome').on('change', function() {
+	$('input.partorome').not(this).prop('checked', false);
+});
+
+$('input.rometoath').on('change', function() {
+	$('input.rometoath').not(this).prop('checked', false);
+});
+
+$('input.rometolon').on('change', function() {
+	$('input.rometolon').not(this).prop('checked', false);
+});
+
+$('input.rometopar').on('change', function() {
+	$('input.rometopar').not(this).prop('checked', false);
+});
+
+//display respective flight table according to selections
+function flightschedule() {
+
+	var from = document.getElementById('from');
+	var to = document.getElementById('to');	
+	if(from.options[from.selectedIndex].text == "Athens" && to.options[to.selectedIndex].text == "London") {
+		document.getElementById('athlon').style.display = "block";
+		document.getElementById('athpar').style.display = "none";
+		document.getElementById('athrome').style.display = "none";
+		document.getElementById('lonath').style.display = "none";
+		document.getElementById('lonpar').style.display = "none";
+		document.getElementById('lonrome').style.display = "none";
+		document.getElementById('parath').style.display = "none";
+		document.getElementById('parlon').style.display = "none";
+		document.getElementById('parrome').style.display = "none";
+		document.getElementById('romeath').style.display = "none";
+		document.getElementById('romelon').style.display = "none";
+		document.getElementById('romepar').style.display = "none";
+		document.getElementById('dep').value = "";
+		document.getElementById('arri').value = "";
+	}
+	else if(from.options[from.selectedIndex].text === "Athens" && to.options[to.selectedIndex].text === "Paris") {
+		document.getElementById('athlon').style.display = "none";
+		document.getElementById('athpar').style.display = "block";
+		document.getElementById('athrome').style.display = "none";
+		document.getElementById('lonath').style.display = "none";
+		document.getElementById('lonpar').style.display = "none";
+		document.getElementById('lonrome').style.display = "none";
+		document.getElementById('parath').style.display = "none";
+		document.getElementById('parlon').style.display = "none";
+		document.getElementById('parrome').style.display = "none";
+		document.getElementById('romeath').style.display = "none";
+		document.getElementById('romelon').style.display = "none";
+		document.getElementById('romepar').style.display = "none";
+		document.getElementById('dep').value = "";
+		document.getElementById('arri').value = "";
+	}
+	else if(from.options[from.selectedIndex].text === "Athens" && to.options[to.selectedIndex].text === "Rome") {
+		document.getElementById('athlon').style.display = "none";
+		document.getElementById('athpar').style.display = "none";
+		document.getElementById('athrome').style.display = "block";
+		document.getElementById('lonath').style.display = "none";
+		document.getElementById('lonpar').style.display = "none";
+		document.getElementById('lonrome').style.display = "none";
+		document.getElementById('parath').style.display = "none";
+		document.getElementById('parlon').style.display = "none";
+		document.getElementById('parrome').style.display = "none";
+		document.getElementById('romeath').style.display = "none";
+		document.getElementById('romelon').style.display = "none";
+		document.getElementById('romepar').style.display = "none";
+		document.getElementById('dep').value = "";
+		document.getElementById('arri').value = "";	
+	}
+	else if(from.options[from.selectedIndex].text === "London" && to.options[to.selectedIndex].text === "Athens") {
+		document.getElementById('athlon').style.display = "none";
+		document.getElementById('athpar').style.display = "none";
+		document.getElementById('athrome').style.display = "none";
+		document.getElementById('lonath').style.display = "block";
+		document.getElementById('lonpar').style.display = "none";
+		document.getElementById('lonrome').style.display = "none";
+		document.getElementById('parath').style.display = "none";
+		document.getElementById('parlon').style.display = "none";
+		document.getElementById('parrome').style.display = "none";
+		document.getElementById('romeath').style.display = "none";
+		document.getElementById('romelon').style.display = "none";
+		document.getElementById('romepar').style.display = "none";
+		document.getElementById('dep').value = "";
+		document.getElementById('arri').value = "";
+	}
+	else if(from.options[from.selectedIndex].text === "London" && to.options[to.selectedIndex].text === "Paris") {
+		document.getElementById('athlon').style.display = "none";
+		document.getElementById('athpar').style.display = "none";
+		document.getElementById('athrome').style.display = "none";
+		document.getElementById('lonath').style.display = "none";
+		document.getElementById('lonpar').style.display = "block";
+		document.getElementById('lonrome').style.display = "none";
+		document.getElementById('parath').style.display = "none";
+		document.getElementById('parlon').style.display = "none";
+		document.getElementById('parrome').style.display = "none";
+		document.getElementById('romeath').style.display = "none";
+		document.getElementById('romelon').style.display = "none";
+		document.getElementById('romepar').style.display = "none";
+		document.getElementById('dep').value = "";
+		document.getElementById('arri').value = "";		
+	}
+	else if(from.options[from.selectedIndex].text === "London" && to.options[to.selectedIndex].text === "Rome") {
+		document.getElementById('athlon').style.display = "none";
+		document.getElementById('athpar').style.display = "none";
+		document.getElementById('athrome').style.display = "none";
+		document.getElementById('lonath').style.display = "none";
+		document.getElementById('lonpar').style.display = "none";
+		document.getElementById('lonrome').style.display = "block";
+		document.getElementById('parath').style.display = "none";
+		document.getElementById('parlon').style.display = "none";
+		document.getElementById('parrome').style.display = "none";
+		document.getElementById('romeath').style.display = "none";
+		document.getElementById('romelon').style.display = "none";
+		document.getElementById('romepar').style.display = "none";		
+		document.getElementById('dep').value = "";
+		document.getElementById('arri').value = "";
+	}
+	else if(from.options[from.selectedIndex].text === "Paris" && to.options[to.selectedIndex].text === "Athens") {
+		document.getElementById('athlon').style.display = "none";
+		document.getElementById('athpar').style.display = "none";
+		document.getElementById('athrome').style.display = "none";
+		document.getElementById('lonath').style.display = "none";
+		document.getElementById('lonpar').style.display = "none";
+		document.getElementById('lonrome').style.display = "none";
+		document.getElementById('parath').style.display = "block";
+		document.getElementById('parlon').style.display = "none";
+		document.getElementById('parrome').style.display = "none";
+		document.getElementById('romeath').style.display = "none";
+		document.getElementById('romelon').style.display = "none";
+		document.getElementById('romepar').style.display = "none";
+		document.getElementById('dep').value = "";
+		document.getElementById('arri').value = "";	
+	}
+	else if(from.options[from.selectedIndex].text === "Paris" && to.options[to.selectedIndex].text === "London") {
+		document.getElementById('athlon').style.display = "none";
+		document.getElementById('athpar').style.display = "none";
+		document.getElementById('athrome').style.display = "none";
+		document.getElementById('lonath').style.display = "none";
+		document.getElementById('lonpar').style.display = "none";
+		document.getElementById('lonrome').style.display = "none";
+		document.getElementById('parath').style.display = "none";
+		document.getElementById('parlon').style.display = "block";
+		document.getElementById('parrome').style.display = "none";
+		document.getElementById('romeath').style.display = "none";
+		document.getElementById('romelon').style.display = "none";
+		document.getElementById('romepar').style.display = "none";
+		document.getElementById('dep').value = "";
+		document.getElementById('arri').value = "";
+	}
+	else if(from.options[from.selectedIndex].text === "Paris" && to.options[to.selectedIndex].text === "Rome") {
+		document.getElementById('athlon').style.display = "none";
+		document.getElementById('athpar').style.display = "none";
+		document.getElementById('athrome').style.display = "none";
+		document.getElementById('lonath').style.display = "none";
+		document.getElementById('lonpar').style.display = "none";
+		document.getElementById('lonrome').style.display = "none";
+		document.getElementById('parath').style.display = "none";
+		document.getElementById('parlon').style.display = "none";
+		document.getElementById('parrome').style.display = "block";
+		document.getElementById('romeath').style.display = "none";
+		document.getElementById('romelon').style.display = "none";
+		document.getElementById('romepar').style.display = "none";
+		document.getElementById('dep').value = "";
+		document.getElementById('arri').value = "";	
+	}	
+	else if(from.options[from.selectedIndex].text === "Rome" && to.options[to.selectedIndex].text === "Athens") {
+		document.getElementById('athlon').style.display = "none";
+		document.getElementById('athpar').style.display = "none";
+		document.getElementById('athrome').style.display = "none";
+		document.getElementById('lonath').style.display = "none";
+		document.getElementById('lonpar').style.display = "none";
+		document.getElementById('lonrome').style.display = "none";
+		document.getElementById('parath').style.display = "none";
+		document.getElementById('parlon').style.display = "none";
+		document.getElementById('parrome').style.display = "none";
+		document.getElementById('romeath').style.display = "block";
+		document.getElementById('romelon').style.display = "none";
+		document.getElementById('romepar').style.display = "none";
+		document.getElementById('dep').value = "";
+		document.getElementById('arri').value = "";	
+	}
+	else if(from.options[from.selectedIndex].text === "Rome" && to.options[to.selectedIndex].text === "London") {
+		document.getElementById('athlon').style.display = "none";
+		document.getElementById('athpar').style.display = "none";
+		document.getElementById('athrome').style.display = "none";
+		document.getElementById('lonath').style.display = "none";
+		document.getElementById('lonpar').style.display = "none";
+		document.getElementById('lonrome').style.display = "none";
+		document.getElementById('parath').style.display = "none";
+		document.getElementById('parlon').style.display = "none";
+		document.getElementById('parrome').style.display = "none";
+		document.getElementById('romeath').style.display = "none";
+		document.getElementById('romelon').style.display = "block";
+		document.getElementById('romepar').style.display = "none";	
+		document.getElementById('dep').value = "";
+		document.getElementById('arri').value = "";	
+	}
+	else if(from.options[from.selectedIndex].text === "Rome" && to.options[to.selectedIndex].text === "Paris") {
+		document.getElementById('athlon').style.display = "none";
+		document.getElementById('athpar').style.display = "none";
+		document.getElementById('athrome').style.display = "none";
+		document.getElementById('lonath').style.display = "none";
+		document.getElementById('lonpar').style.display = "none";
+		document.getElementById('lonrome').style.display = "none";
+		document.getElementById('parath').style.display = "none";
+		document.getElementById('parlon').style.display = "none";
+		document.getElementById('parrome').style.display = "none";
+		document.getElementById('romeath').style.display = "none";
+		document.getElementById('romelon').style.display = "none";
+		document.getElementById('romepar').style.display = "block";	
+		document.getElementById('dep').value = "";
+		document.getElementById('arri').value = "";	
+	}	
+}
+
+//calculate departure and arrival as well as return departure and arrival
+$("tr.schedule").click(function() {
+	var datetime = $(this).find("td.datetime").text();
+	var duration = $(this).find("td.duration").text();
+	var durhour = parseInt(duration.slice(0, 1));
+	var durminutes = parseInt(duration.slice(2, 5));
+	var date = datetime.slice(0, 10);
+	var day = parseInt(date.slice(0, 2));
+	var month = parseInt(date.slice(3, 5));
+	var year = parseInt(date.slice(6, 10));
+	var time = datetime.slice(11, datetime.length);
+	var hour = parseInt(datetime.slice(11, 13));
+	var minutes = parseInt(datetime.slice(14, 16));
+	var noon = datetime.slice(17, 20);
+			
+	function arrival() {
+		var stringday = day.toString();//calculate arrival time
+		if((hour + durhour > 24) && (minutes + durminutes > 60)) {
+			var calchour = ((hour + 1) + durhour) - 24;
+			var calcminutes = (minutes + durminutes) - 60;
+			if(calchour < 10 && calcminutes < 10){
+				var arrhour = "0" + calchour;
+				var arrminutes = "0" + calcminutes;
+			}
+			else if(calchour >= 10 && calcminutes < 10) {
+				arrhour = calchour;
+				arrminutes = "0" + calcminutes;
+			}
+			else if(calchour < 10 && calcminutes >= 10) {
+				arrhour = "0" + calchour;
+				arrminutes = calcminutes;
+			}
+			else if(calchour >= 10 && calcminutes >= 10) {
+				arrhour = calchour;
+				arrminutes = calcminutes;
+			}	
+			}
+			else if((hour + durhour > 24) && (minutes + durminutes < 60)) {
+				calchour = (hour + durhour) - 24;
+				calcminutes = minutes + durminutes;
+				if(calchour < 10 && calcminutes < 10) {
+					arrhour = "0" + calchour;
+					arrminutes = "0" + calcminutes;
+				}
+				else if(calchour >= 10 && calcminutes < 10){
+					arrhour = calchour;
+					arrminutes = "0" + calcminutes;
+				}
+				else if(calchour < 10 && calcminutes >= 10) {
+					arrhour = "0" + calchour;
+					arrminutes = calcminutes;
+				}
+				else if(calchour >= 10 && calcminutes >= 10){
+					arrhour = calchour;
+					arrminutes = calcminutes;
+				}	
+			}
+			else if((hour + durhour < 24) && (minutes + durminutes > 60)) {
+				calchour = ((hour + 1) + durhour);
+				calcminutes = (minutes + durminutes) - 60;
+				if((calchour < 10) && (calcminutes < 10)) {
+					arrhour = "0" + calchour;
+					arrminutes = "0" + calcminutes;
+				}
+				else if(calchour >= 10 && calcminutes < 10) {
+					arrhour = calchour;
+					arrminutes = "0" + calcminutes;
+				}
+				else if(calchour < 10 && calcminutes >= 10) {
+					arrhour = "0" + calchour;
+					arrminutes = calcminutes;
+				}
+				else if(calchour >= 10 && calcminutes >= 10) {
+					arrhour = calchour;
+					arrminutes = calcminutes;
+				}
+			}
+			else if((hour + durhour < 24) && (minutes + durminutes < 60)) {
+				calchour = (hour + durhour);
+				calcminutes = minutes + durminutes;
+				if(calchour < 10 && calcminutes < 10) {
+					arrhour = "0" + calchour;
+					arrminutes = "0" + calcminutes;
+				}
+				else if(calchour >= 10 && calcminutes < 10){
+					arrhour = calchour;
+					arrminutes = "0" + calcminutes;
+				}
+				else if(calchour < 10 && calcminutes >= 10) {
+					arrhour = "0" + calchour;
+					arrminutes = calcminutes;
+				}
+				else if(calchour >= 10 && calcminutes >= 10){
+					arrhour = calchour;
+					arrminutes = calcminutes;
+				}
+			}
+			else if((hour + durhour > 24) && (minutes + durminutes == 60)) {
+				calchour = ((hour + 1) + durhour) - 24;
+				if (calchour < 10) {
+					arrhour = "0" + calchour;
+					arrminutes = "0" + 0;
+				}
+				else if(calchour >= 10) {
+					arrhour = calchour;
+					arrminutes = "0" + 0;
+				}	
+			}
+			else if((hour + durhour < 24) && (minutes + durminutes == 60)) {
+				calchour = ((hour + 1) + durhour);
+				if (calchour < 10) {
+					arrhour = "0" + calchour;
+					arrminutes = "0" + 0;
+				}
+				else if(calchour >= 10) {
+					arrhour = calchour;
+					arrminutes = "0" + 0;
+				}	
+			}
+			else if((hour + durhour == 24) && (minutes + durminutes == 60)) {
+				arrhour = "0" + 0;
+				arrminutes = "0" + 0;	
+			}
+			else if((hour + durhour == 24) && (minutes + durminutes > 60)) {
+				calchour = ((hour + 1) + durhour) - 24;
+				if (calchour < 10) {
+					arrhour = "0" + calchour;
+					arrminutes = "0" + 0;
+				}
+				else if(calchour >= 10) {
+					arrhour = calchour;
+					arrminutes = "0" + 0;
+				}	
+			}
+			else if((hour + durhour == 24) && (minutes + durminutes < 60)) {
+				calcminutes = minutes + durminutes;
+				if (calcminutes < 10) {
+					arrhour = "0" + 0;
+					arrminutes = "0" + calcminutes;
+				}
+				else if(calcminutes >= 10) {
+					arrhour = "0" + 0;
+					arrminutes = calcminutes;
+				}	
+			}
+			if(arrhour < 12) {
+				var arrnoon = "π.μ.";
+			}
+			else if(arrhour >= 12) {
+				arrnoon = "μ.μ.";
+			}	
+//calculate arrival date
+	if((month == 01 || month == 03 || month == 05 || month == 07 || month == 08 || month == 10) && (day == 31) && (hour + durhour > 24)) {
+		var arrday = 01;
+		var arryear = year;
+		if(month == 10) {
+			var arrmonth = month + 1;
+		}
+		else {
+			arrmonth = "0" + (month + 1);
+		}	
+	}
+	else if((month == 01 || month == 03 || month == 05 || month == 07 || month == 08 || month == 10) && (day != 31) && (hour + durhour > 24)) {
+		if(stringday.startsWith("0") && (stringday != "09")) {
+			arrday = "0" + (day + 1);
+		}
+		else if(stringday == "09") {
+			arrday = 10;
+		}
+		else {
+			arrday = day + 1;
+		}				
+		if(month == 10) {
+			arrmonth = month;
+		}
+		else {
+			arrmonth == "0" + month;
+		}
+			arryear = year;
+		}
+	else if((month == 01 || month == 03 || month == 05 || month == 07 || month == 08 || month == 10) && (hour + durhour <= 24)) {
+		if(stringday.length == 1) {
+			arrday = "0" + day;
+		}
+		else {
+			arrday = day;
+		}
+		if(month != 10){
+			arrmonth = "0" + month;
+		}
+		else {
+			arrmonth = 10;
+		}
+			arryear = year;
+		}
+	else if((month == 12) && (day == 31) && (hour + durhour > 24)) {
+		arrday = 01;
+		arrmonth = 01;
+		arryear = year + 1;
+	}
+	else if((month == 12) && (day != 31) && (hour + durhour > 24)) {
+		if(stringday.startsWith("0") && (stringday != "09")) {
+			arrday = "0" + (day + 1);
+		}
+		else if(stringday == "09") {
+			arrday = 10;
+		}
+		else {
+			arrday = day + 1;
+		}
+		arrmonth = month;
+		arryear = year;
+	}
+	else if((month == 12) && (hour + durhour <=24)) {
+		if(stringday.startsWith("0")) {
+			arrday = "0" + day;
+		}
+		else {
+			arrday = day;
+		}	
+		arrmonth = month;
+		arryear = year;
+		}
+	else if((month == 04 || month == 06 || month == 09 || month == 11) && (day == 30) && (hour + durhour > 24)) {
+		arrday = 01;
+		if(month == 11) {
+			arrmonth = month + 1;
+		}
+		else {
+			arrmonth = "0" + (month + 1);
+		}
+			arryear = year;
+		}
+	else if((month == 04 || month == 06 || month == 09 || month == 11) && (hour + durhour <=24)) {
+		if(stringday.startsWith("0")) {
+			arrday = "0" + day;
+		}
+		else {
+			arrday = day;
+		}
+		if(month == 11) {
+			arrmonth = month;
+		}
+		else {
+			arrmonth = "0" + month;
+		}
+			arryear = year;
+		}
+	else if((month == 04 || month == 06 || month == 09 || month == 11) && (day != 30) && (hour + durhour > 24)) {
+		if(stringday.startsWith("0") && (stringday != "09")) {
+			arrday = "0" + (day + 1);
+		}
+		else if(stringday == "09") {
+			arrday = 10;
+		}
+		else {
+			arrday = day + 1;
+		}
+		arrmonth = month;
+		arryear = year;
+		}
+	else if((month == 02) && (day == 28) && (hour + durhour > 24)) {
+		arrday = 01;
+		arrmonth = 03;
+		arryear = year;
+		}
+	else if((month == 02) && (day != 28) && (hour + durhour > 24)) {
+		if(stringday.startsWith("0") && (stringday != "09")) {
+			arrday = "0" + (day + 1);
+		}
+		else if(stringday == "09"){
+			arrday = 10;
+		}
+		else {
+			arrday = day + 1;
+		}
+		arrmonth = month;
+		arryear = year;
+		}
+	else if((month == 02) && (hour + durhour <= 24)) {
+		if(stringday.startsWith("0")) {
+			arrday = "0" + day;
+		}
+		else {
+			arrday = day;
+		}
+		arrmonth = 02;
+		arryear = year;
+		}	
+		document.getElementById('arri').value = arrday + "/" + arrmonth + "/" + arryear + " " + arrhour + ":" + arrminutes + " " + arrnoon;
+	}
+	arrival();
+	document.getElementById('dep').value = datetime;
+});
+				
+$(document).on("click", "td", function() {
+		var index = $(this).parent().index();console.log(index);
+});	
+</script>

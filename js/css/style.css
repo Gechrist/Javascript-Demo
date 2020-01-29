@@ -1,0 +1,147 @@
+body {
+	margin-top: 100px;
+	position: relative;
+}
+
+.form-group-row{
+	margin-top: 10px;
+}
+
+#p1specialorder, #p2specialorder, #p3specialorder, #p4specialorder, #p5specialorder, #p6specialorder, .col-form-label {
+	margin-top: 20px;
+	display: none;
+}
+
+#list-item-2, #list-item-3, #list-item-4, #list-item-5 {
+	margin-top: 40px;
+}
+
+.scrollspy-example {
+	position: relative;
+}
+
+#dest2 {
+	margin-top: 10px;
+}
+
+#passengers {
+	margin-top: 20px;
+}
+
+#p2, #p3, #p5, #p6 {
+	margin-left: 20px;
+	display: none;
+}
+
+#p4, #p5, #p6 {
+	margin-top: 20px;
+	display: none;
+}
+
+.btn-separator:after {
+    content: ' ';
+    display: block;
+    float: right;
+    background: #ADADAD;
+    margin: 0 10px;
+    height: 34px;
+    width: 1px;
+}
+
+#p1seat {
+	margin-top: 20px;
+}
+
+#p2seat, #p3seat, #p4seat, #p5seat, #p6seat {
+	margin-top: 20px;
+	display: none;
+}
+
+#p1meal {
+	margin-top: 20px;
+}
+
+#p2meal {
+	display: none;
+}
+
+#p3meal, #p4meal, #p5meal, #p6meal {
+	margin-top: 20px;
+	display: none;
+}
+
+.price {
+	margin-bottom: 40px;
+}
+
+.list-group-item-action {
+	border: none;
+	font-size: 23px;
+	font-weight: bold;
+	background-color: #e8f1ff;
+}
+
+.list-group-item-action:hover {
+	font-size: 17px;
+	background-color: #f5f9ff;
+}
+
+h3 {
+	background-color: #e8f1ff;
+}
+
+.price input, .price p {
+	display: inline-block;
+}
+
+.price input {
+	width: 30%;
+}
+
+.price p {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.form-check {
+	margin-top: 20px;
+}
+
+.overflow-auto {
+	height: 450px;
+}
+
+#depdate, #arridate {
+	margin-top: 20px;
+}
+
+#dep, #arri {
+	text-align: center;
+}	
+
+#retdepdate, #retarridate {
+	margin-top: 5px;
+	display: none;
+}
+
+#retdate {
+	margin-top: 50px;
+	display: none;
+}
+
+#retdep, #retarri {
+	display: none;
+	text-align: center;
+}
+
+#athlon, #athpar, #athrome, #lonath, #lonpar, #lonrome, #parath, #parlon, #parrome, #romeath, #romelon, #romepar {
+	margin-top: 20px;
+	border: 1px solid black;
+	display: none;
+}
+
+th, td {
+	border: 1px solid black;
+	padding: 5px;
+	text-align: center;
+}
